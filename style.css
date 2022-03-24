@@ -86,3 +86,10 @@ pre {
     width: 20;
     height: 20;
 }
+
+#footer{
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
