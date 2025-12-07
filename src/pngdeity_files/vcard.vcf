@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Nathan Somers
+N;CHARSET=UTF-8:Somers;Nathan;;Mr;
+EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:nsomers97@gmail.com
+TEL;TYPE=HOME,VOICE:8159929869
+ADR;CHARSET=UTF-8;TYPE=HOME:;;;;;;United States of America
+URL;CHARSET=UTF-8:http://pngdeity.ru/
+X-SOCIALPROFILE;TYPE=twitter:https://x.com/pngdeity
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/pngdeity
+X-SOCIALPROFILE;TYPE=GitHub:https://github.com/pngdeity
+REV:2025-09-02T23:05:02.845Z
+END:VCARD
