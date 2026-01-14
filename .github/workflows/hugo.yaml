@@ -78,13 +78,11 @@ jobs:
           restore-keys:
             hugo-
       - name: Build the site
-        # --baseURL "${{ steps.pages.outputs.base_url }}/blog/" \
-        # Note adjustment of the Hugo build source directory
         run: |
           hugo \
             --gc \ 
             --minify \
-            --cacheDir "${{ runner.temp }}/hugo_cache" 
+            --cacheDir "${{ runner.temp }}/hugo_cache" \
             --source ./hugo-src
       - name: Move Hugo public directory to website location
         run: mv ./hugo-src/public/* ./src/blog/
