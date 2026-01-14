@@ -80,7 +80,7 @@ jobs:
       - name: Build the site
         run: |
           hugo \
-            --gc \ 
+            --gc \
             --minify \
             --cacheDir "${{ runner.temp }}/hugo_cache" \
             --source ./hugo-src
