@@ -1,8 +1,8 @@
 name: Build Hugo Content
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #  branches:
+  #    - main
   workflow_dispatch:
 permissions:
   contents: read
@@ -78,14 +78,13 @@ jobs:
           restore-keys:
             hugo-
       - name: Build the site
+        # --baseURL "${{ steps.pages.outputs.base_url }}/blog/" \
+        # Note adjustment of the Hugo build source directory
         run: |
           hugo \
-            --gc \ # garbage collection
-            --minify \ # Apparent
-            # TODO: This should generate the content
-            # --baseURL "${{ steps.pages.outputs.base_url }}/blog/" \
-            --cacheDir "${{ runner.temp }}/hugo_cache"
-            # Adjust the Hugo build source directory
+            --gc \ 
+            --minify \
+            --cacheDir "${{ runner.temp }}/hugo_cache" 
             --source ./hugo-src
       - name: Move Hugo public directory to website location
         run: mv ./hugo-src/public/* ./src/blog/
