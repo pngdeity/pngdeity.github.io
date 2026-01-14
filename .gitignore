@@ -1,9 +1,9 @@
 # .gitignore
 
 # Files generated during the Hugo publishing process
-/public/
+*/public/
 /resources/_gen/
 hugo_stats.json
 
 # Temporary lock file while building Hugo
-/.hugo_build.lock
+.hugo_build.lock
