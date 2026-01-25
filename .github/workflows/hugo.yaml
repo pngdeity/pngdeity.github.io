@@ -1,8 +1,8 @@
 name: Build Hugo Content
 on:
-  # push:
-  #  branches:
-  #    - main
+  push:
+   branches:
+     - main
   workflow_dispatch:
 permissions:
   contents: read
@@ -95,10 +95,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-        # Upload ALL files, not just the Hugo-generated ones
-        # TODO: This should be the root directory of ALL content files for your website.
-        # Originally was just the public directory
-          path: ./src
+          path: './src'
   deploy:
     environment:
       name: github-pages
