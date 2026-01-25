@@ -1,6 +1,6 @@
 +++
 date = '2026-01-13T20:42:09-06:00'
-draft = true
+draft = false
 title = 'Staying Awake'
 +++
 ## Tips for Working While Tired
