@@ -7,7 +7,7 @@ title = 'Staying Awake'
 
 ### [Enhanced interrogation](https://en.wikipedia.org/wiki/Enhanced_interrogation_techniques) for home use
 
-Remember, fatigue is just another complicator to working effectively. The intensity of fatigue you are likely to encounter can be effectively overcome almost always. So, you must be raise your attention to good studying form or the chance of failure increases, whether from distraction, by rationalizing going to sleep, or anything else that can go wrong. Remember [Murphy's Law](https://en.wikipedia.org/wiki/Murphy's_Law).
+Remember, fatigue is just another complicator to working effectively. The intensity of fatigue you are likely to encounter can be effectively overcome almost always. So, you must raise your attention to good studying form or the chance of failure increases, whether from distraction, by rationalizing going to sleep, or anything else that can go wrong. Remember [Murphy's Law](https://en.wikipedia.org/wiki/Murphy's_Law).
 
 * Frequently drink glasses of ice water or fragrant herbal tea. The temperature will not only alert you, but also will make you get up to go to the bathroom more often.
 * Chew gum, or have sugar-free mints. Don’t have something that will disrupt your digestion aut overnight fast though.
@@ -23,7 +23,7 @@ Remember, fatigue is just another complicator to working effectively. The intens
 * Use the sleep-disrupting blue light from computer technology to your advantage by scheduling computer work towards the later hours. Similarly, change the color schemes of your software to be deliberately bright. Note, do not wear your blue-light blocking glasses if applicable.
 * Consider icing some part of your body (stomach, knees, wrists, etc.) using an ice pack. Similarly, consider submerging a foot or two in a bucket of ice water.
 * Lean forward in your chair, with both feet flat on the ground or primed to jump underneath your desk. Consider switching to a backless stool so you cannot lean back and relax. Alternatively, lean back in your chair such that you are only on two legs.
-* Put some adrenaline in your veins. Apply some minor harm to your body to elicit an autonomic response. Examples include plucking nose hairs, pouring hot water on your skin, slapping yourself a la Captain Sinbad playing David Goggins. Experiment to find the golden mean between too little and too much stimulation.
+* Put some adrenaline in your veins. Apply some minor harm to your body to elicit an autonomic response. Examples include plucking nose hairs, pouring hot water on your skin, slapping yourself à la Captain Sinbad playing David Goggins. Experiment to find the golden mean between too little and too much stimulation.
 * Sit up straight and act as though you are well-rested. "Posture check."
 * Use a resistance band tied around your bed structure to hold your torso upright.
 
@@ -48,7 +48,7 @@ Remember, fatigue is just another complicator to working effectively. The intens
 * Have a partner because all-nighters are always more fun with friends. Also, waves of tiredness hit people at different times.
 * Consume an electrolyte solution. You will have not eaten for some time, and you may be urinating more.
 * Prioritize completing your work over sleeping every time.
-* Remember, you must stay focussed.
+* Remember, you must stay focused.
 
 ### Tips for Recovering from Nights with <1 Hour of Sleep
 
