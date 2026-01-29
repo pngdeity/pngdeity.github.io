@@ -100,6 +100,8 @@ jobs:
         run: |
           mkdir -p ./src/app
           mv release/wwwroot/* ./src/app/
+      - name: Create .nojekyll
+        run: touch ./src/.nojekyll
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v5
