@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DART_SASS_VERSION: 1.97.2
+      DOTNET_VERSION: 10.0.x
       GO_VERSION: 1.25.5
       HUGO_VERSION: 0.154.4
       NODE_VERSION: 24.12.0
@@ -38,6 +39,10 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -63,6 +68,7 @@ jobs:
           echo "Go: $(go version)"
           echo "Hugo: $(hugo version)"
           echo "Node.js: $(node --version)"
+          echo ".NET: $(dotnet --version)"
       - name: Install Node.js dependencies
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
@@ -86,6 +92,14 @@ jobs:
             --source ./hugo-src
       - name: Move Hugo public directory to website location
         run: mv ./hugo-src/public/* ./src/blog/
+      - name: Build Blazor App
+        run: |
+          dotnet publish my-blazor-app/BlazorApp.csproj -c Release -o release
+          sed -i 's|<base href="/" />|<base href="/app/" />|g' release/wwwroot/index.html
+      - name: Move Blazor App to website location
+        run: |
+          mkdir -p ./src/app
+          mv release/wwwroot/* ./src/app/
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v5
