@@ -1,3 +1,6 @@
 [submodule "hugo-src/themes/ananke"]
 	path = hugo-src/themes/ananke
 	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
+[submodule "my-blazor-app"]
+	path = my-blazor-app
+	url = https://github.com/pngdeity/my-blazor-app
