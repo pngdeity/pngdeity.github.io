@@ -1,4 +1,6 @@
-name: Build Hugo Content
+name: Build and Deploy Website Content
+description: 'Builds Hugo and NET content in parallel, as needed. Uploads artifact to GitHub pages environment.'
+
 on:
   push:
    branches:
@@ -20,7 +22,6 @@ env:
   GO_VERSION: 1.25.5
   HUGO_VERSION: 0.154.4
   NODE_VERSION: 24.12.0
-  TZ: Europe/Oslo
 
 jobs:
   build_hugo:

@@ -10,3 +10,6 @@ hugo_stats.json
 
 # Ideas that need not be shared publicly
 content-ideas.txt
+
+# .NET build artifacts
+/release/
