@@ -1,5 +1,5 @@
 name: Build and Deploy Website Content
-description: 'Builds Hugo and NET content in parallel, as needed. Uploads artifact to GitHub pages environment.'
+description: 'Builds Hugo and .NET content in parallel, as needed. Uploads artifact to GitHub pages environment.'
 
 on:
   push:
