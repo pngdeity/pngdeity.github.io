@@ -45,7 +45,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
 
       - name: Setup Hugo
         if: steps.cache-hugo.outputs.cache-hit != 'true'
@@ -98,7 +97,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          cache: true
 
       - name: Build Blazor App
         if: steps.cache-blazor.outputs.cache-hit != 'true'
