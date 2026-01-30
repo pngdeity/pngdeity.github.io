@@ -14,93 +14,141 @@ concurrency:
 defaults:
   run:
     shell: bash
+env:
+  DART_SASS_VERSION: 1.97.2
+  DOTNET_VERSION: 10.0.x
+  GO_VERSION: 1.25.5
+  HUGO_VERSION: 0.154.4
+  NODE_VERSION: 24.12.0
+  TZ: Europe/Oslo
+
 jobs:
-  build:
+  build_hugo:
     runs-on: ubuntu-latest
-    env:
-      DART_SASS_VERSION: 1.97.2
-      DOTNET_VERSION: 10.0.x
-      GO_VERSION: 1.25.5
-      HUGO_VERSION: 0.154.4
-      NODE_VERSION: 24.12.0
-      TZ: Europe/Oslo
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
           submodules: recursive
           fetch-depth: 0
+
+      - name: Restore Hugo Build Cache
+        id: cache-hugo
+        uses: actions/cache@v4
+        with:
+          path: hugo-src/public
+          key: hugo-site-${{ runner.os }}-${{ hashFiles('hugo-src/**') }}
+
       - name: Setup Node.js
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
-          cache: true
+
       - name: Setup Hugo
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
+
       - name: Install Dart Sass
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
           curl -sLJO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
           tar -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
           echo "$PWD/dart-sass" >> $GITHUB_PATH
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+
       - name: Install Node.js dependencies
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
-      - name: Configure Git
+
+      - name: Build Hugo
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
-          git config core.quotepath false
-      - name: Cache restore
-        id: cache-restore
-        uses: actions/cache/restore@v5
-        with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: hugo-${{ github.run_id }}
-          restore-keys:
-            hugo-
-      - name: Build and Move Sites
-        run: |
-          # Build Hugo
           hugo \
             --gc \
             --minify \
-            --cacheDir "${{ runner.temp }}/hugo_cache" \
             --source ./hugo-src
-          mv ./hugo-src/public/* ./src/blog/
 
-          # Build Blazor
+      - name: Upload Hugo Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-site
+          path: hugo-src/public
+
+  build_blazor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Restore Blazor Build Cache
+        id: cache-blazor
+        uses: actions/cache@v4
+        with:
+          path: release/wwwroot
+          key: blazor-app-${{ runner.os }}-${{ hashFiles('my-blazor-app/**') }}
+
+      - name: Setup .NET
+        if: steps.cache-blazor.outputs.cache-hit != 'true'
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+          cache: true
+
+      - name: Build Blazor App
+        if: steps.cache-blazor.outputs.cache-hit != 'true'
+        run: |
           dotnet publish my-blazor-app/BlazorApp.csproj -c Release -o release
           sed -i 's|<base href="/" />|<base href="/app/" />|g' release/wwwroot/index.html
-          mkdir -p ./src/app
-          mv release/wwwroot/* ./src/app/
-      - name: Create .nojekyll
-        run: touch ./src/.nojekyll
-      - name: Cache save
-        id: cache-save
-        uses: actions/cache/save@v5
+
+      - name: Upload Blazor Artifact
+        uses: actions/upload-artifact@v4
         with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: './src'
-  deploy:
+          name: blazor-site
+          path: release/wwwroot
+
+  merge_and_deploy:
+    runs-on: ubuntu-latest
+    needs: [build_hugo, build_blazor]
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Download Hugo Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: hugo-site
+          path: src/blog
+
+      - name: Download Blazor Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: blazor-site
+          path: src/app
+
+      - name: Create .nojekyll
+        run: touch src/.nojekyll
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './src'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
