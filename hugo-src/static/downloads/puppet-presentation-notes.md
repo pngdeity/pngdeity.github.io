@@ -10,7 +10,7 @@ Ergo,
 
 # Puppet
 
-A software *system*. Or, in it's own words, a "system configuration management tool.
+A software *system*. Or, in its own words, a "system configuration management tool.
 
 * Disclaimers: or what this presentation won't be
 	* A rigorous tutorial - Look online. People have been paid to make content on this. RTFM.
