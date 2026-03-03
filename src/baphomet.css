@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: rgb(159, 32, 15);
+    margin: 0;
+    padding: 8px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+center {
+    display: block;
+    text-align: center;
+}
+
+img {
+    margin-bottom: 10px;
+}
+
+table {
+    border-spacing: 2px 2px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-collapse: separate;
+    margin: 0 auto;
+    text-align: start;
+}
+
+td {
+    padding: 4px;
+}
+
+a {
+    color: rgb(159, 32, 15);
+    text-decoration: underline;
+    cursor: pointer;
+}
