@@ -40,11 +40,7 @@
         Published: {{- .Date | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) -}}
       </time>
       {{end}}
-      {{ if and (not .Lastmod.IsZero) (gt .Lastmod .Date) }}
-      <span class="f6 mv4 dib tracked">
-        - Last edited: {{ .Lastmod | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) }}
-      </span>
-      {{ end }}
+      {{ if and (not .Lastmod.IsZero) (ne .Lastmod .Date) }}
 
       {{/*
           Show "reading time" and "word count" but only if one of the following are true:
