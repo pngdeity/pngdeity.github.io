@@ -84,7 +84,7 @@ EXIT METHOD Systems Theory
 ---
 
 ["Why Order Matters" by Steve Traugott](https://www.usenix.org/legacy/publications/library/proceedings/lisa02/tech/full_papers/traugott/traugott_html/index.html) pub. December 2002
-* Had found success repeatedly and with increaing effectiveness
+* Had found success repeatedly and with increasing effectiveness
 	* Fast rollouts and industry adoption
 * Naturally, they wanted to know **why?** And crucially, how to *prove* their superiority to their peers.
 * Intuition: Contra many of their peers, the ordered deterministic nature of the toolset granted success
