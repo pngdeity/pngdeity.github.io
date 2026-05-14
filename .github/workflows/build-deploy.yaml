@@ -142,6 +142,17 @@ jobs:
           name: blazor-site
           path: src/app
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Generate Site Metadata
+        run: node scripts/generate-site-metadata.mjs
+
+      - name: Validate Site Metadata
+        run: node scripts/validate-site-metadata.mjs
+
       - name: Create .nojekyll
         run: touch src/.nojekyll
 
