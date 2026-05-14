@@ -1,0 +1,3 @@
+Contact: mailto:security@pngdeity.ru
+Expires: 2026-05-14
+Policy: https://pngdeity.ru/
