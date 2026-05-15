@@ -1,5 +1,4 @@
 name: Auto Rollback Bad Pages Deployment
-description: Automatically redeploys the most recent known-good commit when post-deploy health checks fail.
 
 on:
   workflow_run:
