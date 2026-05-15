@@ -143,16 +143,21 @@ jobs:
           name: blazor-site
           path: src/app
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Go
+        uses: actions/setup-go@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          go-version: '1.22'
+          cache-dependency-path: tools/ci/go.sum
 
       - name: Generate Site Metadata
-        run: python3 scripts/generate-site-metadata.py
+        run: |
+          cd tools/ci
+          go run ./generatemetadata --repo ../../
 
       - name: Validate Site Metadata
-        run: python3 scripts/validate-site-metadata.py
+        run: |
+          cd tools/ci
+          go run ./validatemetadata ../../src
 
       - name: Create .nojekyll
         run: touch src/.nojekyll
@@ -168,74 +173,18 @@ jobs:
 
       - name: Post-deploy Health Verification
         id: post_deploy_health
-        continue-on-error: true
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
-          set -uo pipefail
-          mkdir -p health-check
-          log_file="health-check/post-deploy-health-check.log"
-          : > "$log_file"
-
           if [[ -z "${PAGE_URL:-}" ]]; then
-            echo "Deployment URL is empty." | tee -a "$log_file"
+            echo "Deployment URL is empty."
             exit 1
           fi
 
           base_url="${PAGE_URL%/}"
-          endpoints=(
-            "/"
-            "/blog/"
-            "/app/"
-            "/sitemap.xml"
-            "/robots.txt"
-          )
-          failures=()
 
-          echo "Waiting for GitHub Pages propagation..." | tee -a "$log_file"
+          echo "Waiting for GitHub Pages propagation..."
           sleep 20
 
-          for endpoint in "${endpoints[@]}"; do
-            url="${base_url}${endpoint}"
-            body_file="health-check/body$(echo "$endpoint" | tr '/.' '__').txt"
-            status="$(curl -sS -L -o "$body_file" -w "%{http_code}" "$url" || true)"
-            if [[ "$status" != "200" ]]; then
-              failures+=("${endpoint} => HTTP ${status}")
-              echo "FAIL ${endpoint}: HTTP ${status}" | tee -a "$log_file"
-            else
-              echo "PASS ${endpoint}: HTTP ${status}" | tee -a "$log_file"
-            fi
-          done
-
-          {
-            echo "## Post-deploy Health Verification"
-            echo "Base URL: ${base_url}"
-            if [[ "${#failures[@]}" -eq 0 ]]; then
-              echo ""
-              echo "- ✅ All deterministic checks passed."
-            else
-              echo ""
-              echo "- ❌ One or more checks failed:"
-              for failure in "${failures[@]}"; do
-                echo "  - ${failure}"
-              done
-            fi
-          } >> "$GITHUB_STEP_SUMMARY"
-
-          if [[ "${#failures[@]}" -ne 0 ]]; then
-            printf '%s\n' "${failures[@]}" > health-check/failures.txt
-            exit 1
-          fi
-
-      - name: Upload Post-deploy Health Logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: post-deploy-health-${{ github.run_id }}
-          path: health-check
-
-      - name: Fail deployment on health verification failure
-        if: steps.post_deploy_health.outcome != 'success'
-        run: |
-          echo "Post-deploy health verification failed. See uploaded health-check artifact." >> "$GITHUB_STEP_SUMMARY"
-          exit 1
+          cd tools/ci
+          go run ./healthcheck --base-url "$base_url" --endpoints "/,/blog/,/app/,/sitemap.xml,/robots.txt"
