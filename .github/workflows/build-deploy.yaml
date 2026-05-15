@@ -36,7 +36,7 @@ jobs:
 
       - name: Restore Hugo Build Cache
         id: cache-hugo
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: hugo-src/public
           key: hugo-site-${{ runner.os }}-${{ hashFiles('hugo-src/**') }}
@@ -75,7 +75,7 @@ jobs:
             --source ./hugo-src
 
       - name: Upload Hugo Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: hugo-site
           path: hugo-src/public
@@ -90,14 +90,14 @@ jobs:
 
       - name: Restore Blazor Build Cache
         id: cache-blazor
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: release/wwwroot
           key: blazor-app-${{ runner.os }}-${{ hashFiles('my-blazor-app/**') }}
 
       - name: Setup .NET
         if: steps.cache-blazor.outputs.cache-hit != 'true'
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -108,7 +108,7 @@ jobs:
           sed -i 's|<base href="/" />|<base href="/app/" />|g' release/wwwroot/index.html
 
       - name: Upload Blazor Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: blazor-site
           path: release/wwwroot
@@ -129,22 +129,22 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Download Hugo Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: hugo-site
           path: src/blog
 
       - name: Download Blazor Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: blazor-site
           path: src/app
 
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: '1.22'
           cache-dependency-path: tools/ci/go.sum
@@ -163,14 +163,14 @@ jobs:
         run: touch src/.nojekyll
 
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './src'
           include-hidden-files: true
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Post-deploy Health Verification
         id: post_deploy_health
