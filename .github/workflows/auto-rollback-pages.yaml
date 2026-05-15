@@ -1,0 +1,163 @@
+name: Auto Rollback Bad Pages Deployment
+
+on:
+  workflow_run:
+    workflows: ["Build and Deploy Website Content"]
+    types: [completed]
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      rollback_sha:
+        description: Commit SHA to redeploy.
+        required: true
+        type: string
+      bad_sha:
+        description: Optional bad commit SHA for incident reporting context.
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-rollback
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  AUTO_ROLLBACK_ENABLED: ${{ vars.AUTO_ROLLBACK_ENABLED || 'true' }}
+
+jobs:
+  resolve_rollback_context:
+    runs-on: ubuntu-latest
+    outputs:
+      should_rollback: ${{ steps.resolve.outputs.should_rollback }}
+      incident_detected: ${{ steps.resolve.outputs.incident_detected }}
+      reason: ${{ steps.resolve.outputs.reason }}
+      bad_sha: ${{ steps.resolve.outputs.bad_sha }}
+      bad_run_id: ${{ steps.resolve.outputs.bad_run_id }}
+      bad_run_url: ${{ steps.resolve.outputs.bad_run_url }}
+      target_sha: ${{ steps.resolve.outputs.target_sha }}
+      target_run_id: ${{ steps.resolve.outputs.target_run_id }}
+      target_run_url: ${{ steps.resolve.outputs.target_run_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: tools/ci
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: tools/ci/go.sum
+
+      - name: Resolve rollback target
+        id: resolve
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_ROLLBACK_SHA: ${{ github.event.inputs.rollback_sha }}
+          INPUT_BAD_SHA: ${{ github.event.inputs.bad_sha }}
+        run: |
+          cd tools/ci
+          go run ./resolverollback
+
+  create_or_update_incident:
+    runs-on: ubuntu-latest
+    needs: [resolve_rollback_context]
+    if: needs.resolve_rollback_context.outputs.incident_detected == 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: tools/ci
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: tools/ci/go.sum
+
+      - name: Create or update rollback incident issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd tools/ci
+          go run ./manageincident \
+            --bad-run-id "${{ needs.resolve_rollback_context.outputs.bad_run_id }}" \
+            --bad-run-url "${{ needs.resolve_rollback_context.outputs.bad_run_url }}" \
+            --bad-sha "${{ needs.resolve_rollback_context.outputs.bad_sha }}" \
+            --target-sha "${{ needs.resolve_rollback_context.outputs.target_sha }}" \
+            --target-run-url "${{ needs.resolve_rollback_context.outputs.target_run_url }}" \
+            --reason "${{ needs.resolve_rollback_context.outputs.reason }}"
+
+  promote_and_deploy:
+    runs-on: ubuntu-latest
+    needs: [resolve_rollback_context]
+    if: needs.resolve_rollback_context.outputs.should_rollback == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: tools/ci
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: tools/ci/go.sum
+
+      - name: Download Previous Pages Artifact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh run download ${{ needs.resolve_rollback_context.outputs.target_run_id }} \
+            --repo ${{ github.repository }} \
+            --name github-pages \
+            --dir downloaded-pages
+
+      - name: Extract Artifact
+        run: |
+          mkdir extracted-pages
+          tar -xf downloaded-pages/artifact.tar -C extracted-pages
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './extracted-pages'
+
+      - name: Deploy to GitHub Pages (Rollback)
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Post-rollback Health Verification
+        id: post_rollback_health
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          if [[ -z "${PAGE_URL:-}" ]]; then
+            echo "Rollback deployment URL is empty."
+            exit 1
+          fi
+
+          base_url="${PAGE_URL%/}"
+          echo "Waiting for GitHub Pages propagation..."
+          sleep 20
+
+          cd tools/ci
+          go run ./healthcheck --base-url "$base_url" --endpoints "/,/blog/,/app/,/sitemap.xml,/robots.txt" --rollback

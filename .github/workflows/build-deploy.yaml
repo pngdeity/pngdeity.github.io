@@ -22,6 +22,7 @@ env:
   GO_VERSION: 1.25.5
   HUGO_VERSION: 0.154.4
   NODE_VERSION: 24.12.0
+  PYTHON_VERSION: '3.12'
 
 jobs:
   build_hugo:
@@ -142,6 +143,22 @@ jobs:
           name: blazor-site
           path: src/app
 
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: tools/ci/go.sum
+
+      - name: Generate Site Metadata
+        run: |
+          cd tools/ci
+          go run ./generatemetadata --repo ../../
+
+      - name: Validate Site Metadata
+        run: |
+          cd tools/ci
+          go run ./validatemetadata ../../src
+
       - name: Create .nojekyll
         run: touch src/.nojekyll
 
@@ -153,3 +170,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Post-deploy Health Verification
+        id: post_deploy_health
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          if [[ -z "${PAGE_URL:-}" ]]; then
+            echo "Deployment URL is empty."
+            exit 1
+          fi
+
+          base_url="${PAGE_URL%/}"
+
+          echo "Waiting for GitHub Pages propagation..."
+          sleep 20
+
+          cd tools/ci
+          go run ./healthcheck --base-url "$base_url" --endpoints "/,/blog/,/app/,/sitemap.xml,/robots.txt"

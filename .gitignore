@@ -13,3 +13,8 @@ content-ideas.txt
 
 # .NET build artifacts
 /release/
+
+# Go build artifacts
+/tools/ci/bin/
+*.exe
+*.test
