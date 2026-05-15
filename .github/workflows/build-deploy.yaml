@@ -166,6 +166,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: './src'
+          include-hidden-files: true
 
       - name: Deploy to GitHub Pages
         id: deployment
