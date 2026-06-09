@@ -57,7 +57,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.26.3'
+          go-version-file: 'tools/ci/go.mod'
           cache-dependency-path: tools/ci/go.sum
 
       - name: Resolve rollback target
@@ -83,7 +83,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.26.3'
+          go-version-file: 'tools/ci/go.mod'
           cache-dependency-path: tools/ci/go.sum
 
       - name: Create or update rollback incident issue
@@ -115,7 +115,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.26.3'
+          go-version-file: 'tools/ci/go.mod'
           cache-dependency-path: tools/ci/go.sum
 
       - name: Download Previous Pages Artifact

@@ -18,3 +18,4 @@ content-ideas.txt
 /tools/ci/bin/
 *.exe
 *.test
+node_modules/
