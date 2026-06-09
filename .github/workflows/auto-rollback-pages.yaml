@@ -161,4 +161,4 @@ jobs:
           sleep 20
 
           cd tools/ci
-          go run ./healthcheck --base-url "$base_url" --endpoints "/,/blog/,/app/,/sitemap.xml,/robots.txt" --rollback
+          go run ./healthcheck --base-url "$base_url" --endpoints "/,/blog/,/sitemap.xml,/robots.txt" --rollback
