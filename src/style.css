@@ -15,6 +15,11 @@ a:hover {
     color: #55f;
 }
 
+a:focus-visible {
+    outline: 2px solid #55f;
+    outline-offset: 2px;
+}
+
 ul {
     list-style-type: '—';
 }
