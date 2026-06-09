@@ -18,7 +18,7 @@ defaults:
     shell: bash
 env:
   DART_SASS_VERSION: 1.97.2
-  GO_VERSION: 1.25.5
+  GO_VERSION: 1.26.3
   HUGO_VERSION: 0.154.4
   NODE_VERSION: 24.12.0
   PYTHON_VERSION: '3.12'
@@ -106,7 +106,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.22'
+          go-version: ${{ env.GO_VERSION }}
           cache-dependency-path: tools/ci/go.sum
 
       - name: Generate Site Metadata
