@@ -337,7 +337,10 @@ func main() {
 	}
 	wb, _ := json.MarshalIndent(webfinger, "", "  ")
 	writeFile(filepath.Join(srcRoot, ".well-known", "webfinger"), string(wb)+"\n")
-	writeFile(filepath.Join(srcRoot, ".well-known", "keybase.txt"), "# Keybase proof placeholder\n")
+	kbPath := filepath.Join(srcRoot, ".well-known", "keybase.txt")
+	if _, err := os.Stat(kbPath); os.IsNotExist(err) {
+		writeFile(kbPath, "# Keybase proof placeholder\n")
+	}
 
 	expires := time.Now().UTC().AddDate(1, 0, 0).Format("2006-01-02")
 	securityTxt := fmt.Sprintf("Contact: mailto:security@pngdeity.ru\nExpires: %s\nPolicy: %s/\n\n", expires, canonicalOrigin)

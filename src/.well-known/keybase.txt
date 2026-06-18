@@ -1,0 +1,70 @@
+==================================================================
+https://keybase.io/pngdeity
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://pngdeity.ru
+  * I am pngdeity (https://keybase.io/pngdeity) on keybase.
+  * I have a public key with fingerprint 75D4 F8FA 890D BEDE 71A1  04D9 0D76 2ADE 0E00 C8DF
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012068f79d1e2a83037ea1e6ac687f2e977a1f4cf2093bffc34b43f0946b23a9314b0a",
+      "fingerprint": "75d4f8fa890dbede71a104d90d762ade0e00c8df",
+      "host": "keybase.io",
+      "key_id": "0d762ade0e00c8df",
+      "kid": "0101f0c54984d2dda8ad02443c721a145d1147d071048a1c12d799dbaa3f1e8e55e40a",
+      "uid": "d219472b5cd0565bc841a136a58c2219",
+      "username": "pngdeity"
+    },
+    "service": {
+      "hostname": "pngdeity.ru",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1781741992,
+  "expire_in": 157680000,
+  "prev": "8725bc601a6bec25df303d8974bca2fe54b33fac6e2d67e224ac5d8cbece8b0a",
+  "seqno": 24,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFlUn1MlVUYv3QvJjjQ8nPlFy+MJQM657zn/bot+kNqTd00P0abKzzvOee9vGL3
+Xu59AekOMpclcwE6nEoLuOmEaMy0D5sUzhgbxeQKsdJsGKINVo6cZA4cdC7GP3X+
+OTvP8/v9nt/zPKcuxe2an5BSljWU6uq5kdA7Zrp2y8a5iGQGWIXkjUjFfPbiexgP
+O4XFNpO8EoAIqLqlGQxyRHQZyBonkKuEqrpmIW5oGoEWphYChmxaFpWxiWULGFg1
+kUwMGWITEClbsmy/j4eCIdvvCFlNYdjSLaIbgJmccQ0SCDATL01FhHHAAaA6swSx
+KBCOM4Q5k4R5rh0QMfEofGTv//g53wBagCrY0DFDjBGdMIAwlqmGRC2sMAixxoAm
+yuoEUoiYZhjMJES2INe5onA867t0Vo4haGANmQplQFEVk+pYqMgqUXSKRC4ODPOQ
+n7zBBTro9zFuOxVSZbYkomU25fHBxjv5DyI3VCqowVDACdDAHpEocpxg2BsnOhXB
+OLKcm4X/ahSatp+JMQpGGQ+F7YBf8kKBpI4dF4WaDjUMDQNlS3xv0A7xQjuOUDRV
+B+LE6/AyIalrSHSgglchUU1OkcIssVemGxo2KUEWV7Apy5ZYMUdM1ThCmFCF6VSA
+uf5onWFe4g9IXoSFUeITomHb5ydOaYhLlcnVCZ95XAnzXauWpXlKBx9MVqd0DpVE
+Pdfm/l7iY/GP50pOWjQX+VNaMP3sa5OLi8ODnSdXvzudvvrHJ7sim5e0bJVXXO3u
+6JDU6o2jfc8w+lTX8NmR39PrM880N1bGlvS/nbPmYv+DnP157/cQkDR+qiaDTv/w
+c/SV/fUL1148njG+cql1JvuhvHCg41c18Xjtjvza3R8ebXn8p/S6T67HeL9nX0nB
+zftXQ6k0uYYf/rv0RuBK8q2XXozMnFubueH6UBW9PBJdfuHmzrzypmi30vBd68SR
+dU19rZegsiD9klW7vud755a77fwvM18dgzWju7xTsPH503svfJrV9Plzd18//F5X
+2stkuNnXmn9oTHpi1InpMXUqc+PDQ+WTW098aUTc83xJvbE/Gm/rE52Di8oOuu2C
+9N4Vf+2b3PT1kYPL6z1AdqdVtGfhoxU93e0HCtpz8jfXz7Q8fXnXwLK21pEXBsbW
+Xbl2evvwllW/TXzwFtx5vmjlaPM37+QufnPLyTX93jsNqXnbQj0fHdj+8Z2MaPcX
+Z9v75B2JdfOmqqbudt2rut3Qtt5eOn7s/rfyiU19sXv/AA==
+=YzZ3
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/pngdeity
+
+==================================================================
