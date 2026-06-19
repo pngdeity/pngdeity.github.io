@@ -50,7 +50,7 @@ jobs:
       target_run_url: ${{ steps.resolve.outputs.target_run_url }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           sparse-checkout: tools/ci
 
@@ -76,7 +76,7 @@ jobs:
     if: needs.resolve_rollback_context.outputs.incident_detected == 'true'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           sparse-checkout: tools/ci
 
@@ -108,7 +108,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           sparse-checkout: tools/ci
 
