@@ -95,7 +95,7 @@ jobs:
           path: src/blog
 
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@v7
         with:
           go-version-file: 'tools/ci/go.mod'
           cache-dependency-path: tools/ci/go.sum
