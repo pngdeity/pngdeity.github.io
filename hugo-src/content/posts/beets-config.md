@@ -1,10 +1,8 @@
 +++
 date = '2024-03-27T10:00:00-06:00'
 draft = true
-title = 'Managing local music libraries with beets'
+title = 'Managing music locally with beets'
 +++
-
-# Managing local music libraries with beets
 
 In an era of streaming, maintaining a high-quality local music library can feel like a lost art. For those who still prefer the control of local files, **[beets](https://beets.io/)** is the definitive command-line tool for orchestrating a perfect library. It’s more than just a tagger—it’s a media management ecosystem.
 
