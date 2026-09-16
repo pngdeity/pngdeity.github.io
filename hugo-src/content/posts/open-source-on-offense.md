@@ -31,15 +31,46 @@ In April 2022, Microsoft [handed governance to the Linux Foundation](https://www
 
 Here's the part I can't get over: the project's premier members today include Microsoft, Google, Alibaba, Broadcom, Dell, and NVIDIA, alongside **Cisco, Arista, and Nokia** — the incumbents whose proprietary switch software SONiC was built to displace.
 
+## Why switches?
+
+Of all the layers Microsoft could have gone after, why this one? Because a commoditization play only works when three things line up at once, and data-center switching was one of the few places where they did.
+
+First, it is a thing Microsoft buys in enormous volume and never sells. The Azure network alone ran [more than 180,000 switches](https://www.nextplatform.com/2021/05/12/microsoft-does-the-math-on-azure-datacenter-switch-failures/) across 130 locations as of 2021, and SONiC now runs on "millions of ports." Every datacenter build buys the whole layer again, forever.
+
+Second, a supplier was extracting rent from it. Cisco's product gross margins have sat in the 60s for a decade, and it sold the box and the software as a single unit, so the premium was never itemized. You could not buy the switch and decline the lock-in.
+
+Third, the technical path to breaking that lock had just opened. Broadcom's merchant silicon put a commodity switch ASIC on the open market, which meant the hardware was no longer the moat. What remained was the network OS — and a network OS is software, which is a thing Microsoft already knew how to write at scale.
+
+Notice what the third condition rules out. Microsoft cannot commoditize top-end CPUs; there is no merchant alternative, and RISC-V is not close. And it will never commoditize operating systems in general, because it sells one. The sweet spot is a layer where it is a giant buyer, a rentier sits on the other side, and a technical shift has just cleared the way. Switches checked every box. It is the mirror image of the PC play: Microsoft used to sell the OS and commoditize the box; in the datacenter it buys the box and commoditizes the OS.
+
+To put a number on the rent, take the same generation of switch — 3.2 Tbps of capacity, 32 100-gigabit ports — from each side:[^prices]
+
+| | Cisco Nexus 9332C (list) | Edgecore AS7712-32X (bare metal) |
+| :--- | ---: | ---: |
+| Capacity | 3.2 Tbps | 3.2 Tbps |
+| Price | ~$51,400 | ~$8,340 |
+| Per 100G port | ~$1,606 | ~$261 |
+| Per gigabit of capacity | ~$16.06 | ~$2.61 |
+
+[^prices]: Cisco list price for the N9K-C9332C from the Cisco global price list; Edgecore AS7712-32X price from Colfax Direct. Both as of September 2026. The Edgecore unit is bare metal with no network OS; the Cisco price includes NX-OS.
+
+Call it a sixfold spread at list. Cisco's street prices are far below list, so the defensible claim is "a large multiple," not "six times" — but even at 60 or 70 percent off, the incumbent still lands several times above the white-box price. Spread a delta of that size across 180,000 switches and the arithmetic reaches into the billions, which is why this was worth Microsoft's engineering time before a single line of SONiC was written.
+
+The market shares tell the same story with fewer caveats. In 2015 Cisco took about [60 percent of all Ethernet switch revenue](https://www.fierce-network.com/cloud/cisco-grabs-60-percent-ethernet-switch-revenue-2015-delloro-group). By 2022, Omdia had Cisco at 37 percent of data-center Ethernet switch revenue, Arista at 18, and white-box vendors at 14. The best bookend of all: in 2015 Cisco published a post arguing that [white-box switches were "no bargain"](https://blogs.cisco.com/news/myth-busting-white-box-switches-are-no-bargain) — 20 to 30 percent *more* expensive once support was counted — and by 2026 it was [selling its Silicon One silicon to the white-box builders and SONiC operators](https://hyperframeresearch.com/2026/05/24/ciscos-silicon-one-an-8-12bn-business/). When the incumbent starts arming the commodity ecosystem, the commodity has won.
+
+Two honest caveats. List price overstates the gap, because nobody pays list. And the white-box figure excludes optics, NOS support, and integration, while the Cisco figure includes NX-OS and a support contract. SONiC also did not set these prices by itself: merchant silicon did the heavy lifting, and SONiC removed the last lock-in. The fair claim is narrower, and more interesting, than "SONiC cut switch prices sixfold." The software was the final brick in the wall.
+
+<!-- TODO(author): numbers to own or replace. The prices are public list figures, not quotes you would actually get. If you have real procurement numbers — or would rather cut the table and let the share data carry the point — say the word. -->
+
 ## Commoditizing the complement
 
-Time for the economics, because they are the entire story. In 2002, Joel Spolsky gave this pattern a name: [commoditize your complement](https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/).
+There's a name for this. In 2002, Joel Spolsky gave it one: [commoditize your complement](https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/).
 
 A *complement* is a product people buy alongside yours. Demand for your product rises when the price of its complements falls, so your strategic interest is to drive those prices down toward marginal cost — and there is no cheaper price than free.
 
 Spolsky's examples are the familiar ones: IBM documenting the PC so the add-in market would commoditize, and Microsoft licensing MS-DOS to every clone-maker so the PC itself became a commodity. In both cases the point was never the layer being commoditized; it was the layer that stayed scarce. For IBM that layer was the PC, briefly. For Microsoft it was the operating system, for a long time.
 
-Microsoft is running the same play with switches. Data-center networking had been a vertically integrated, high-margin business: you bought the box and the software together, and the software had names like Cisco IOS, Juniper Junos, and Arista EOS. Microsoft, meanwhile, is one of the largest buyers of networking gear on the planet. Open-source the network OS, standardize the interface to the silicon, and the box becomes a commodity you buy the way you buy servers — from white-box and ODM vendors, on merchant silicon, at commodity prices. Whatever Microsoft could have earned selling a network OS is rounding error next to what it saves buying switches for Azure.
+SONiC is that play, run on switches. What Microsoft gave away was the network OS; what it bought itself was a future in which a switch is an interchangeable box, bought on price from whichever white-box vendor is cheapest.
 
 ## Giving away the standard
 
