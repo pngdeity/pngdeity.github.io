@@ -1,10 +1,12 @@
 +++
 date = '2025-01-29T10:00:00-06:00'
 draft = true
-title = 'Stealing GitHub Commits for Fun & Profit'
+title = 'Stealing GitHub Commits'
 +++
 
-# Stealing commits on GitHub
+> "You Wouldn't Steal a Car"
+>
+> <cite>MPAA Anti-Piracy PSA, 2004</cite>
 
 Lmao the mad lad did it https://github.com/anthropics/claude-code/issues/65710
 

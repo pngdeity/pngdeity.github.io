@@ -4,12 +4,24 @@ draft = true
 title = 'Managing music locally with beets'
 +++
 
-In an era of streaming, maintaining a high-quality local music library can feel like a lost art. For those who still prefer the control of local files, **[beets](https://beets.io/)** is the definitive command-line tool for orchestrating a perfect library. It’s more than just a tagger—it’s a media management ecosystem.
+> "Out, out, damned Spotify!"
+>
+> — <cite>[Richard Stallman](https://www.stallman.org/spotify.html), *What's bad about: Spotify*</cite>
+
+Although the convenience of streaming cannot be understated, there's something special (if not a bit hipster-ish) about curating a personal music library of files. I started seriously listening to music using iTunes, and it (along with a trusty iPod Touch) shaped how I interacted and related to the act of listening to music as the medium of local files is the message. Hence, the on-demand infinite possibilities of Spotify not only put a bajillion of songs at my fingertips,[^missing-music] but my switch to Linux obsoleted my previous preferred software. Enter an open-source and appropriately decoupled duo: cmus, the C music player and **[beets](https://beets.io/)**, a music metadata manager and our subject for today.
+
+[^missing-music]: Notable omissions in Spotify's catalog include Jaco Pastorious's solo work and a high-school obsession of mine titled "Synthesocietal."
+
+Beets has a lot of features and typical of CLI clients, many of them are hidden behind `--help` flags, man pages, and domain-specific knowledge. We'll get to those, don't fear, but to make the journey as smooth as possible, I first have to point out the water that we're swimming in. iTunes hid behind its glossy GUI a tight coupling between metadata[^data] and the music[^metadata] whereby the pertinent information like the Artist, title, album were written to and stored on each music file such that the presence of metadata implied the presence of the file and conversely. However, beets stores the metadata for the music independently of the files in a decoupled fashion.
+
+[^data]: data about data
+
+[^metadata]: that is data about data, the latter of which comprises my sweet collection of mp3's, flac files, etc.
 
 Here is a breakdown of my current `config.yaml` and the philosophy behind it.
 
-## The Global Foundation
-My library lives in `~/music`, and I keep the database in the standard `.config` location. Multi-threading is enabled (`threaded: true`) to speed up the interface, and I’ve opted for a colorful UI to keep the CLI experience readable.
+## The global foundation
+My music lives in `~/music`, and I keep the database in the standard `.config` location. Multi-threading is enabled (`threaded: true`) to speed up imports (mainly loudness normalization), and I’ve opted for a colorful UI because my terminal supports it.
 
 ```yaml
 directory: ~/music
@@ -19,10 +31,10 @@ ui:
   color: true
 ```
 
-## Import Philosophy: A Clean Slate
+## Import
 When I import new music, I prefer to start from scratch. My configuration removes all existing metadata (`from_scratch: true`) and re-identifies everything using **MusicBrainz**. This ensures total consistency across my collection.
 
-I also prioritize English transliterations for metadata if they exist, which keeps the library navigable regardless of the artist's origin.
+I also prioritize English transliterations for metadata if they exist, which keeps the library navigable and helps as much textual content renders as possible.
 
 ```yaml
 import:
@@ -54,7 +66,7 @@ zero:
 ```
 
 ### 2. Acoustic Fingerprinting with "Chroma"
-Sometimes metadata is so broken that name-based matching fails. The `chroma` plugin uses the **AcoustID** project to identify songs based on their actual audio waveform.
+The `chroma` plugin uses the **AcoustID** project to identify songs based on their actual audio waveform, which is almost always required when importing pirated music from the Russians.
 
 ```yaml
 chroma:
@@ -66,7 +78,8 @@ I use the `replaygain` plugin with an `ffmpeg` backend to normalize the perceive
 
 ```yaml
 replaygain:
-  threads: 4
+  # cat /proc/cpuinfo for your machine's max
+  threads: 8
   backend: ffmpeg
   parallel_on_import: false
 ```
@@ -86,4 +99,4 @@ The snippets above are only the highlights. You can download the complete config
 
 ## Conclusion
 
-Setting up `beets` is an investment in your music library. It takes time to dial in the configuration, but once you do, the result is a perfectly tagged, organized, and searchable collection that puts streaming services to shame.
+Setting up `beets` is an investment in your music library. It takes time to dial in the configuration, but once you do, the result is a perfectly tagged, organized, and searchable collection.
