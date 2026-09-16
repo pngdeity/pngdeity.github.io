@@ -76,9 +76,16 @@ replaygain:
 ### 4. Integration with ListenBrainz
 Finally, I sync my listening history to **[ListenBrainz](https://listenbrainz.org/)**, an open-source alternative to Last.fm that integrates perfectly with the MusicBrainz ecosystem.
 
-## Conclusion
-## Full Configuration File
-Setting up `beets` is an investment in your music library. It takes time to dial in the configuration, but once you do, the result is a perfectly tagged, organized, and searchable collection that puts streaming services to shame.
+<!-- TODO(author): this is the only plugin without a config snippet. Expand: what gets synced (plays, loves, "now playing"?) and add the matching listenbrainz block (username/token) like the other plugins. -->
 
-You can download my full configuration file here:
+## Full Configuration File
+
+The snippets above are only the highlights. You can download the complete configuration here:
+
+<!-- TODO(author): decide whether to call out the other plugins the full config enables (scrub, info, unimported, mbsync, autobpm, edit) or leave the download as the catch-all. -->
+
 - [config.yaml](/downloads/config.yaml)
+
+## Conclusion
+
+Setting up `beets` is an investment in your music library. It takes time to dial in the configuration, but once you do, the result is a perfectly tagged, organized, and searchable collection that puts streaming services to shame.
