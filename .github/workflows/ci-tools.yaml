@@ -1,5 +1,4 @@
 name: CI Tools Verification
-
 on:
   push:
     paths:
@@ -7,7 +6,8 @@ on:
   pull_request:
     paths:
       - 'tools/ci/**'
-
+permissions:
+  contents: read
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -17,21 +17,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
-
       - name: Setup Go
         uses: actions/setup-go@v7
         with:
           go-version-file: 'tools/ci/go.mod'
           cache-dependency-path: tools/ci/go.sum
-
       - name: Go Format
         run: go fmt ./...
-
       - name: Go Vet
         run: go vet ./...
-
       - name: Build Tools
         run: go build ./...
-
       - name: Run Tests
         run: go test -v ./...
