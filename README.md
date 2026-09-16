@@ -9,6 +9,15 @@ The GitHub Pages deploy workflow (`.github/workflows/build-deploy.yaml`) generat
 
 These Go applications create/validate `robots.txt`, `sitemap.xml`, `llms*.txt`, and `.well-known` files under `src/`.
 
+## Advisory site checks
+
+`tools/ci/sitecheck` resolves every local `href`/`src`/`poster` reference in the merged `src/` tree (including the Hugo output staged under `src/blog/`), follows same-origin absolute URLs back to files on disk, and asserts that `CNAME` matches the canonical origin. It is **advisory**: findings are reported as workflow annotations and in the step summary, but `continue-on-error` keeps the run green.
+
+- Runs on pull requests via `.github/workflows/validate-site.yaml`.
+- Runs before the Pages upload in `.github/workflows/build-deploy.yaml`.
+
+Unit tests for the metadata tools run in `.github/workflows/ci-tools.yaml` and are blocking.
+
 ## Auto-rollback for bad Pages deployments
 
 The repository includes an automated rollback workflow for GitHub Pages incidents:

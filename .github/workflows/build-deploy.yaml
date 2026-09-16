@@ -86,6 +86,11 @@ jobs:
         with:
           go-version-file: 'tools/ci/go.mod'
           cache-dependency-path: tools/ci/go.sum
+      - name: Site Check (advisory)
+        continue-on-error: true
+        run: |
+          cd tools/ci
+          go run ./sitecheck -repo ../.. -src ../../src
       - name: Generate Site Metadata
         run: |
           cd tools/ci

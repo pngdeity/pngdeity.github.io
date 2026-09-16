@@ -3,9 +3,17 @@ on:
   push:
     paths:
       - 'tools/ci/**'
+      - 'src/**'
+      - 'hugo-src/**'
+      - '.github/workflows/**'
+      - 'package.json'
   pull_request:
     paths:
       - 'tools/ci/**'
+      - 'src/**'
+      - 'hugo-src/**'
+      - '.github/workflows/**'
+      - 'package.json'
 permissions:
   contents: read
 jobs:

@@ -1,0 +1,43 @@
+name: Validate Site
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  HUGO_VERSION: 0.154.4
+jobs:
+  sitecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: '.node-version'
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+      - name: Install Node.js dependencies
+        run: npm ci
+      - name: Build Hugo
+        run: hugo --gc --minify --source ./hugo-src
+      - name: Stage Hugo output
+        run: |
+          mkdir -p src/blog
+          cp -a hugo-src/public/. src/blog/
+      - name: Setup Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: 'tools/ci/go.mod'
+          cache-dependency-path: tools/ci/go.sum
+      - name: Site Check (advisory)
+        continue-on-error: true
+        run: |
+          cd tools/ci
+          go run ./sitecheck -repo ../.. -src ../../src
