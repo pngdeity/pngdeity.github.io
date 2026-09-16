@@ -24,7 +24,6 @@ Deterministic health checks validate HTTP 200 responses for:
 
 - `/`
 - `/blog/`
-- `/app/`
 - `/sitemap.xml`
 - `/robots.txt`
 

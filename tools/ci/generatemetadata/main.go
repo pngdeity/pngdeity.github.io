@@ -34,7 +34,7 @@ func isSitemapHTML(relPath string) bool {
 	if !strings.HasSuffix(relPath, ".html") {
 		return false
 	}
-	if relPath == "404.html" {
+	if filepath.Base(relPath) == "404.html" {
 		return false
 	}
 	parts := strings.SplitN(relPath, "/", 2)
