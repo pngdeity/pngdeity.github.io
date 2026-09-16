@@ -15,7 +15,7 @@ title = 'Wikipedia editing for fun and (no) profit'
 ## Lesser-known Wikimedia Foundation properties
 
 - **[Wikifunctions](https://www.wikifunctions.org/wiki/Wikifunctions:Main_Page)** — a "Rosetta stone for programming languages"; possibly a ripoff of Rosetta Code.
-- **[Wikitech](https://wikitech.wikimedia.org/wiki/Main_Page)** — technical resources for editors and for the Foundation itself, including a detailed picture of how Wikipedia runs (for example, this [infrastructure diagram](https://upload.wikimedia.org/wikipedia/commons/4/48/WMF_infrastructure_2022.png)).
+- **[Wikitech](https://wikitech.wikimedia.org/wiki/Main_Page)** — technical resources for editors and for the Foundation itself, including a detailed picture of how Wikipedia runs (for example, this [infrastructure diagram](https://commons.wikimedia.org/wiki/Special:FilePath/WMF_infrastructure_2022.png)).
 
 <!-- TODO(author): still accurate and current? Are both links alive? -->
 
