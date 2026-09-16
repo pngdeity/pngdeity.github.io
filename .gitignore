@@ -11,11 +11,6 @@ hugo_stats.json
 # Ideas that need not be shared publicly
 content-ideas.txt
 
-# .NET build artifacts
-/release/
-
 # Go build artifacts
 /tools/ci/bin/
-*.exe
-*.test
 node_modules/

@@ -1,10 +1,8 @@
 name: Build and Deploy Website Content
-description: 'Builds Hugo and .NET content in parallel, as needed. Uploads artifact to GitHub pages environment.'
-
 on:
   push:
-   branches:
-     - main
+    branches:
+      - main
   workflow_dispatch:
 permissions:
   contents: read
@@ -19,7 +17,6 @@ defaults:
 env:
   HUGO_VERSION: 0.154.4
   PYTHON_VERSION: '3.12'
-
 jobs:
   build_hugo:
     runs-on: ubuntu-latest
@@ -29,33 +26,28 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-
       - name: Restore Hugo Build Cache
         id: cache-hugo
         uses: actions/cache@v6
         with:
           path: hugo-src/public
           key: hugo-site-${{ runner.os }}-${{ hashFiles('hugo-src/**') }}
-
       - name: Setup Node.js
         if: steps.cache-hugo.outputs.cache-hit != 'true'
         uses: actions/setup-node@v7
         with:
           node-version-file: '.node-version'
-
       - name: Setup Hugo
         if: steps.cache-hugo.outputs.cache-hit != 'true'
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
-
       - name: Install Node.js dependencies
         if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
           npm ci
           echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
-
       - name: Build Hugo
         if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
@@ -63,13 +55,11 @@ jobs:
             --gc \
             --minify \
             --source ./hugo-src
-
       - name: Upload Hugo Artifact
         uses: actions/upload-artifact@v7
         with:
           name: hugo-site
           path: hugo-src/public
-
   merge_and_deploy:
     runs-on: ubuntu-latest
     needs: [build_hugo]
@@ -83,46 +73,37 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
-
       - name: Download Hugo Artifact
         uses: actions/download-artifact@v8
         with:
           name: hugo-site
           path: src/blog
-
       - name: Setup Go
         uses: actions/setup-go@v7
         with:
           go-version-file: 'tools/ci/go.mod'
           cache-dependency-path: tools/ci/go.sum
-
       - name: Generate Site Metadata
         run: |
           cd tools/ci
           go run ./generatemetadata --repo ../../
-
       - name: Validate Site Metadata
         run: |
           cd tools/ci
           go run ./validatemetadata ../../src
-
       - name: Create .nojekyll
         run: touch src/.nojekyll
-
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: './src'
           include-hidden-files: true
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
       - name: Post-deploy Health Verification
         id: post_deploy_health
         env:

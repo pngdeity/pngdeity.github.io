@@ -24,7 +24,6 @@ Deterministic health checks validate HTTP 200 responses for:
 
 - `/`
 - `/blog/`
-- `/app/`
 - `/sitemap.xml`
 - `/robots.txt`
 
@@ -35,7 +34,7 @@ Build or test failures alone do not trigger auto-rollback.
 When a bad deployment is detected on `main`:
 
 1. Finds the most recent known-good successful run of the deploy workflow before the failing run.
-2. Promotes the exact immutable `github-pages` artifact from that prior successful run and directly redeploys it, entirely skipping any rebuilding of Hugo or Blazor.
+2. Promotes the exact immutable `github-pages` artifact from that prior successful run and directly redeploys it, entirely skipping any rebuilding of Hugo.
 3. Runs post-rollback health verification checks using a robust Go-based healthchecker.
 4. Publishes incident and rollback details in workflow summaries and creates/updates a tracking GitHub issue.
 

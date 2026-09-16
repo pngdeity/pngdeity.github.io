@@ -34,7 +34,7 @@ func isSitemapHTML(relPath string) bool {
 	if !strings.HasSuffix(relPath, ".html") {
 		return false
 	}
-	if relPath == "404.html" {
+	if filepath.Base(relPath) == "404.html" {
 		return false
 	}
 	parts := strings.SplitN(relPath, "/", 2)
@@ -239,14 +239,12 @@ func main() {
 	sitemapContent := xml.Header + string(outXML) + "\n"
 	writeFile(filepath.Join(srcRoot, "sitemap.xml"), sitemapContent)
 
-	var rootPages, blogPages, appPages []Entry
+	var rootPages, blogPages []Entry
 	for _, e := range entries {
 		if !strings.Contains(e.RelPath, "/") {
 			rootPages = append(rootPages, e)
 		} else if strings.HasPrefix(e.RelPath, "blog/") {
 			blogPages = append(blogPages, e)
-		} else if strings.HasPrefix(e.RelPath, "app/") {
-			appPages = append(appPages, e)
 		}
 	}
 
@@ -282,13 +280,9 @@ func main() {
 		keyPages = append(keyPages, fmt.Sprintf("- %s (%s)", name, e.Loc))
 	}
 
-	siteOverview := fmt.Sprintf("Site generated from static HTML plus Hugo blog content and an optional Blazor app section under /app/. Canonical host: %s/.", canonicalOrigin)
-	appSection := "- /app/ section is currently not populated"
-	if len(appPages) > 0 {
-		appSection = "- Application assets/content under /app/"
-	}
-	mainSections := fmt.Sprintf("- Root static pages (landing and standalone HTML pages)\n- Blog content under /blog/\n%s", appSection)
-	contentTypes := "- HTML pages\n- Downloadable static assets (documents, images, and related files)\n- Generated application files (when /app/ artifact is present)"
+	siteOverview := fmt.Sprintf("Site generated from static HTML plus Hugo blog content. Canonical host: %s/.", canonicalOrigin)
+	mainSections := "- Root static pages (landing and standalone HTML pages)\n- Blog content under /blog/"
+	contentTypes := "- HTML pages\n- Downloadable static assets (documents, images, and related files)"
 	attribution := "- License file present in repository: LICENSE.md (see project root)."
 	contact := "- Security contact: mailto:security@pngdeity.ru"
 
@@ -320,12 +314,7 @@ func main() {
 		keyPagesStr = strings.Join(keyPages, "\n")
 	}
 
-	appStr := "- /app/ not detected or contains no HTML pages in this build output."
-	if len(appPages) > 0 {
-		appStr = fmt.Sprintf("- /app/ detected with %d HTML page(s) in this build output.", len(appPages))
-	}
-
-	llmsFullContent := fmt.Sprintf("# Site Overview\n%s\n\n# Main Sections\n%s\n\n# Content Types\n%s\n\n# Hugo Major Sections\n%s\n\n# Key Static Pages (src/)\n%s\n\n# Representative Page Samples\n%s\n\n# Application Section\n%s\n\n# Attribution / Licensing\n%s\n\n# Contact\n%s\n\n", siteOverview, mainSections, contentTypes, sectionsStr, rootPagesStr, keyPagesStr, appStr, attribution, contact)
+	llmsFullContent := fmt.Sprintf("# Site Overview\n%s\n\n# Main Sections\n%s\n\n# Content Types\n%s\n\n# Hugo Major Sections\n%s\n\n# Key Static Pages (src/)\n%s\n\n# Representative Page Samples\n%s\n\n# Attribution / Licensing\n%s\n\n# Contact\n%s\n\n", siteOverview, mainSections, contentTypes, sectionsStr, rootPagesStr, keyPagesStr, attribution, contact)
 	writeFile(filepath.Join(srcRoot, "llms-full.txt"), llmsFullContent)
 
 	webfinger := map[string]interface{}{
