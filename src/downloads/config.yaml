@@ -85,7 +85,8 @@ scrub:
 chroma:
   auto: true
 acoustid:
-  apikey: BXQbvOJzhs 
+  # AcoustID API keys are public client identifiers, not secrets.
+  apikey: BXQbvOJzhs
 
 # The overwrite option is poorly named. From the docs: "On import, re-analyze files that already have ReplayGain tags."
 # parallel_on_import refers to thread parallelization (i.e. on a single logical

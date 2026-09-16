@@ -46,8 +46,6 @@ GitHub's Terms of Service are the narrow exception. [Section D.5](https://docs.g
 
 ## Case study: Tandemn Labs
 
-<!-- TODO(author): decision point. This section names Tandemn Labs, its founding engineer Quan Hao Ng, and outside contributors, and argues that specific repos are not actually open source. Keep as-is, soften it, or anonymize? Note the published slides contain the same material. -->
-
 [Tandemn Labs](https://github.com/tandemn-labs#open-source) is a startup with a GitHub organization, employees, and public repositories. Per the company's README, Tandemn's software is "fully open source."
 
 Its projects tell a different story:
