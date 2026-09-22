@@ -4,9 +4,10 @@ title = 'The End of the Internet'
 theme = 'ananke'
 
 enableGitInfo = true
+disableKinds = ['taxonomy', 'term']
 ignoreLogs = ['warning-goldmark-raw-html']
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
