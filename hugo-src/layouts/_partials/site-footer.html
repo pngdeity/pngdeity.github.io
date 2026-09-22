@@ -1,0 +1,18 @@
+{{ $footer := .Site.Data.footer }}
+<footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex-l justify-between items-center">
+    <ul class="pa0 ma0 list f5 f4-ns fw4">
+      {{- range $footer.primary }}
+      <li class="dib pr3"><a class="hover-white white-70 no-underline" href="{{ .url }}">{{ .name }}</a></li>
+      {{- end }}
+    </ul>
+    <ul class="pa0 ma0 list f5 f4-ns fw4">
+      {{- range $footer.secondary }}
+      <li class="dib pr3"><a class="hover-white white-70 no-underline" href="{{ .url }}">{{ .name }}</a></li>
+      {{- end }}
+    </ul>
+  </div>
+  <p class="f6 fw4 white-70 ma0 pt2">
+    <a class="hover-white no-underline" href="/">&copy; {{ $footer.copyright_name }} {{ now.Format "2006" }}</a>
+  </p>
+</footer>
