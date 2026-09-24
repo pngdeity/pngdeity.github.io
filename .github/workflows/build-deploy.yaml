@@ -16,7 +16,6 @@ defaults:
     shell: bash
 env:
   HUGO_VERSION: 0.154.4
-  PYTHON_VERSION: '3.12'
 jobs:
   build_hugo:
     runs-on: ubuntu-latest

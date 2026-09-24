@@ -8,13 +8,13 @@ func TestIsSitemapHTML(t *testing.T) {
 		want bool
 	}{
 		{"index.html", true},
-		{"portal.html", true},
-		{"about-pressing-work.html", true},
+		{"archive.html", true},
+		{"colophon.html", true},
 		{"404.html", false},
 		{"blog/404.html", false},
 		{"blog/index.html", true},
 		{"blog/posts/puppet/index.html", true},
-		{"app/index.html", true},
+		{"misc/index.html", false},
 		{"downloads/notes.html", false},
 		{"style.css", false},
 		{"blog/index.xml", false},
@@ -33,7 +33,7 @@ func TestFilePathToURL(t *testing.T) {
 		want string
 	}{
 		{"index.html", canonicalOrigin + "/"},
-		{"portal.html", canonicalOrigin + "/portal.html"},
+		{"archive.html", canonicalOrigin + "/archive.html"},
 		{"blog/index.html", canonicalOrigin + "/blog/"},
 		{"blog/posts/puppet/index.html", canonicalOrigin + "/blog/posts/puppet/"},
 		{"404.html", canonicalOrigin + "/404.html"},
@@ -50,7 +50,7 @@ func TestFallbackName(t *testing.T) {
 		rel  string
 		want string
 	}{
-		{"about-pressing-work.html", "About Pressing Work"},
+		{"archive-page.html", "Archive Page"},
 		{"my_page.md", "My Page"},
 	}
 	for _, tc := range cases {
