@@ -39,7 +39,7 @@ func isSitemapHTML(relPath string) bool {
 	}
 	parts := strings.SplitN(relPath, "/", 2)
 	top := parts[0]
-	return !strings.Contains(relPath, "/") || top == "blog" || top == "app"
+	return !strings.Contains(relPath, "/") || top == "blog"
 }
 
 func filePathToURL(relPath string) string {
