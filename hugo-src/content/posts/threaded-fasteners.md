@@ -2,6 +2,8 @@
 date = '2026-03-02T10:00:00-06:00'
 draft = false
 title = 'Threaded Fasteners for Computer Science'
+description = 'The first and last presentation you will ever need on threaded fasteners, and why they matter to computing hardware.'
+tags = ['hardware', 'engineering', 'standards']
 +++
 
 # Threaded Fasteners for Computer Science
@@ -24,7 +26,7 @@ Key dimensions include:
 *   **Thread Length:** The portion covered in threads.
 
 ## Thread Geometry
-Threads follow a standardized geometry. Most modern fasteners use a **60° thread angle**. 
+Threads follow a standardized geometry. Most modern fasteners use a **60° thread angle**.
 
 Important diameters to know:
 *   **Major Diameter (Dmaj):** The largest diameter of the thread.
@@ -36,7 +38,7 @@ Important diameters to know:
 There are two primary standards you'll encounter in computing hardware:
 
 ### 1. Unified Thread Standard (UTS)
-Regulated by **ASME/ANSI B1.2-1983**. For sizes smaller than 1/4 inch, they are designated by a number (e.g., #4, #6). 
+Regulated by **ASME/ANSI B1.2-1983**. For sizes smaller than 1/4 inch, they are designated by a number (e.g., #4, #6).
 *   **Example:** `#6-32 x 1/2"`
     *   `#6`: The major diameter.
     *   `32`: The number of threads per inch (TPI).
@@ -60,7 +62,7 @@ If you've ever opened a PC, you've used these:
 | **#4-40** | DVI, VGA, and the D-sub family of connectors |
 
 ## Epilogue: A Note on Pedantry
-I'd just like to interject for a moment. What you're referring to as a "Philips head" is, in fact, a **Philips drive**, or as I've recently taken to calling it, **Ansi Type I Cross Recess**. 
+I'd just like to interject for a moment. What you're referring to as a "Philips head" is, in fact, a **Philips drive**, or as I've recently taken to calling it, **Ansi Type I Cross Recess**.
 
 ## Original Presentation
 This blog post is based on a lightning talk. You can view the original presentation below:

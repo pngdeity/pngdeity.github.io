@@ -2,6 +2,8 @@
 date = '2026-01-13T20:42:09-06:00'
 draft = false
 title = 'Staying Awake'
+description = 'Practical tactics for working effectively while fatigued, from cold water to posture checks.'
+tags = ['productivity', 'focus', 'health']
 +++
 ## Tips for Working While Tired
 

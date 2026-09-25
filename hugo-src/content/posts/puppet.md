@@ -2,6 +2,8 @@
 date = '2023-09-20T10:00:00-06:00'
 draft = false
 title = 'Puppet: Systems Theory and Configuration Management'
+description = 'How configuration management tools like Puppet borrow from systems theory, and why the theory only arrived after the tools.'
+tags = ['systems', 'configuration-management', 'operations']
 +++
 
 > “From a drop of water…a logician could infer the possibility of an Atlantic or a Niagara without having seen or heard of one or the other."

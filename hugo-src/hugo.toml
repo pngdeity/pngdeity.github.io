@@ -4,10 +4,20 @@ title = 'The End of the Internet'
 theme = 'ananke'
 
 enableGitInfo = true
-disableKinds = ['taxonomy', 'term']
 ignoreLogs = ['warning-goldmark-raw-html']
+
+[taxonomies]
+tag = 'tags'
 
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
+
+[params]
+custom_css = ['theme.css']
+
+[params.ananke.social.share]
+icons = false
+sharetext = true
+networks = ['reddit', 'x-twitter']

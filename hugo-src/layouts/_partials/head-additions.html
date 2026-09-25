@@ -1,0 +1,12 @@
+{{- /* Pre-paint theme selection: avoids a flash of the wrong color scheme. */ -}}
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('pg-theme');
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>

@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    {{ if compare.Eq .Kind "term" }}
+      <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links">
+        <p class="f5 gray">Posts tagged &ldquo;{{ .Title }}&rdquo;.</p>
+      </section>
+      <section class="mt4 center mw8">
+        {{ range .Pages }}
+          <div class="w-100 mb4 relative">
+            {{ .Render "summary" }}
+          </div>
+        {{ end }}
+      </section>
+    {{ else }}
+      <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links">
+        {{- .Content -}}
+      </section>
+      <section class="flex-ns mt5 flex-wrap justify-around">
+        {{ range .Paginator.Pages }}
+          <div class="w-100 w-30-l mb4 relative">
+            {{ .Render "summary" }}
+          </div>
+        {{ end }}
+      </section>
+      {{ partial "pagination.html" . -}}
+    {{ end }}
+  </article>
+{{ end }}
