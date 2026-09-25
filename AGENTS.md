@@ -24,6 +24,34 @@ to avoid re-discovering the layout.
 Use root-absolute hrefs (`/...`). Change link lists in `data/footer.toml` and the
 static pages together.
 
+## Theming (light/dark)
+
+- One convention: a `data-theme` attribute on `<html>` (`light`/`dark`), a
+  `pg-theme` `localStorage` key, and CSS custom properties (`--pg-bg`,
+  `--pg-fg`, ...). `prefers-color-scheme` is the fallback when no choice is
+  stored.
+- Blog: vars live in `hugo-src/assets/ananke/css/theme.css`, registered via
+  `params.custom_css` in `hugo-src/hugo.toml` (the ananke pipeline only finds
+  custom CSS under `assets/ananke/css/`, not `assets/css/`). The no-flash
+  pre-paint script is `hugo-src/layouts/_partials/head-additions.html`; the
+  click handler is `hugo-src/assets/js/theme.js`, loaded by the
+  `site-scripts.html` override.
+- Static half: `src/style.css` holds the same vars, each page carries the
+  same inline pre-paint snippet, and `src/theme.js` is a copy of the blog
+  handler. Keep the key, var names, and snippet in sync by hand.
+- The toggle is a fixed top-right circular button showing the theme it will
+  switch to (moon in light, sun in dark); markup lives in
+  `hugo-src/layouts/_partials/theme-toggle.html` and is duplicated into the
+  static pages. `theme.js` keeps `aria-label`/`aria-pressed` in sync.
+- `src/` and `hugo-src/` are two implementations of one convention; they drift
+  unless edited together.
+
+## Tags
+
+`disableKinds` is not set; `[taxonomies] tag = 'tags'` in `hugo-src/hugo.toml`
+enables tag pages under `/blog/tags/`. Posts carry `tags = [...]` in front
+matter; `hugo-src/layouts...` uses the theme defaults, restyled by theme.css.
+
 ## Blog posts
 
 `hugo-src/content/posts/<slug>.md`; `draft = true` posts are excluded from the

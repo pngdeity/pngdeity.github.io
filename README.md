@@ -34,6 +34,38 @@ Use root-absolute links (`/...`) everywhere.
 
 The static lists mirror `data/footer.toml` by hand; update both when links change.
 
+## Theming (light and dark)
+
+The site follows the OS color scheme by default and offers a manual toggle that
+persists in `localStorage` under the `pg-theme` key.
+
+- The convention is a `data-theme` attribute (`light`/`dark`) on `<html>` plus
+  CSS custom properties (`--pg-bg`, `--pg-fg`, `--pg-link`, ...).
+- Blog styles: `hugo-src/assets/ananke/css/theme.css`, registered through
+  `params.custom_css`. The pre-paint script is
+  `hugo-src/layouts/_partials/head-additions.html`; the toggle behavior is
+  `hugo-src/assets/js/theme.js`.
+- Static pages: the same variables live in `src/style.css`, with an inline
+  pre-paint snippet and a copy of the handler at `src/theme.js`.
+
+Because `src/` cannot include the blog's partials, these are two hand-synced
+implementations of one convention — change them together.
+
+## Tags
+
+`hugo-src/hugo.toml` sets `[taxonomies] tag = 'tags'`, so posts carry
+`tags = [...]` front matter and are browsable at `/blog/tags/` (each tag gets a
+term page). This is the topical counterpart to the chronological `/blog/` list.
+
+## Search-engine and social sharing
+
+Single post pages render text-only share links (Reddit and X) from the theme's
+share partial. Networks are set in `hugo-src/hugo.toml` under
+`[params.ananke.social.share]`. The share text is the post's front-matter
+`description` (falling back to a truncated summary), via the override at
+`hugo-src/layouts/_partials/func/social/getShareLink.html` — set `description`
+on every post you want shared well.
+
 ## Adding a blog post
 
 Copy `hugo-src/archetypes/default.md` to `hugo-src/content/posts/<slug>.md` and
