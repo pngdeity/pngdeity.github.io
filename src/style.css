@@ -1,22 +1,62 @@
+:root,
+html[data-theme="light"] {
+  --pg-bg: #f4f4f4;
+  --pg-fg: #1a1a1a;
+  --pg-fg-muted: #5a5a5a;
+  --pg-surface: #ffffff;
+  --pg-border: #d0d0d0;
+  --pg-link: #0b3d91;
+  --pg-link-hover: #2a5fd0;
+}
+
+html[data-theme="dark"] {
+  --pg-bg: #111111;
+  --pg-fg: #e6e6e6;
+  --pg-fg-muted: #a8a8a8;
+  --pg-surface: #1b1b1b;
+  --pg-border: #333333;
+  --pg-link: #ff6f5e;
+  --pg-link-hover: #ff9c90;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --pg-bg: #111111;
+    --pg-fg: #e6e6e6;
+    --pg-fg-muted: #a8a8a8;
+    --pg-surface: #1b1b1b;
+    --pg-border: #333333;
+    --pg-link: #ff6f5e;
+    --pg-link-hover: #ff9c90;
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 40px auto;
   max-width: 800px;
   line-height: 1.6;
   font-size: 18px;
   padding: 0 10px;
+  background-color: var(--pg-bg);
+  color: var(--pg-fg);
 }
 
 a {
-  color: darkblue;
+  color: var(--pg-link);
   text-decoration: none;
 }
 
 a:hover {
-  color: #55f;
+  color: var(--pg-link-hover);
 }
 
-a:focus-visible {
-  outline: 2px solid #55f;
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--pg-link);
   outline-offset: 2px;
 }
 
@@ -53,4 +93,63 @@ ul.links {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.pg-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--pg-surface);
+  color: var(--pg-link);
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+.pg-skip-link:focus {
+  left: 0;
+}
+
+.pg-theme-toggle {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background: var(--pg-surface);
+  border: 1px solid var(--pg-border);
+  border-radius: 50%;
+  color: var(--pg-fg);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.pg-theme-toggle:hover {
+  background: var(--pg-border);
+}
+
+.pg-theme-toggle__icon--sun {
+  display: none;
+}
+
+html[data-theme="dark"] .pg-theme-toggle__icon--moon {
+  display: none;
+}
+
+html[data-theme="dark"] .pg-theme-toggle__icon--sun {
+  display: inline;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .pg-theme-toggle__icon--moon {
+    display: none;
+  }
+  html:not([data-theme="light"]) .pg-theme-toggle__icon--sun {
+    display: inline;
+  }
 }
