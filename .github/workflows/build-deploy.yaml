@@ -83,6 +83,10 @@ jobs:
         run: |
           cd tools/ci
           go run ./generatemetadata --repo ../../
+      - name: Generate Register
+        run: |
+          cd tools/ci
+          go run ./generateregister --repo ../../
       - name: Validate Site Metadata
         run: |
           cd tools/ci

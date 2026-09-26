@@ -274,9 +274,65 @@ a negative `text-indent` so the markers form a clean column of their own with
 the link labels aligned to a second column. It reads as display type: an index,
 not prose.
 
+**The register.** The `/links.html` page is the register: every institution the
+handle `pngdeity` is registered at, as a full-bleed uniform grid of cells, one
+per institution, each cell reading `pngdeity` with the institution beneath it.
+It is the only page where the handle is the *content* rather than the signature,
+and the repetition is the point -- a wall made of one word.
+
+Each cell is laid out like an element on the periodic table: the handle sits as a
+small monospace label in the top-left corner, and the institution name is
+centred in the remaining field. The corner label is the handle recurring in its
+smallest unit; the name is what distinguishes the cell. The cell is `97px` tall
+against a `13rem` column.
+
+The register bleeds: no page margins, the grid meeting all four viewport edges,
+with the footer band breaking it at the bottom as the single seam. The shared
+prose layout (`800px`, centred, `40px` margins) would frame the wall as one
+component among several, which is a lie about what the page is, so `links.html`
+carries a deliberate, commented override rather than inheriting it. The grid
+ends where the collection ends, so the final row may be ragged; padding it would
+mean inventing entries.
+
+Every cell is a link, and the whole cell is the target -- the wall carries no
+inline link styling. Cells are filled by `--pg-surface` on hover, and every cell
+carries a `1px` `--pg-border` hairline. Cell text is centred, both lines, so the
+wall reads as a field of stamps rather than a ragged-edged list. The column floor
+is `13rem` against a `6rem` row, which is sized by the longest institution name
+rather than by taste: an earlier `11rem`/`5rem` left the longest entries flush
+against the cell border, with no slack between the text and the rule. Under the cursor the cell's own text
+resolves: the handle moves from `--pg-fg-muted` to `--pg-link` and the
+institution name to the full foreground, so the wall reads itself where the
+pointer is. This is a state, not an animation -- it is the same category as the
+hover fill, and it is why the register has no scroll-triggered motion: movement
+the user *causes* is interaction, whereas movement the page performs is ornament,
+and ornament is omitted. Where the handle holds more than one account at an
+institution, the cell takes a `--pg-link` left rule and a monospace count; the
+collection currently has no such entry, so the mechanism is present but
+unexercised.
+
+Every cell links to a **profile URL**, not the service root: the handle's own page
+wherever the platform's convention makes one inferable (`/u/pngdeity`,
+`/members/pngdeity/`, `/wiki/User:pngdeity`, `@pngdeity`), and the root only where
+no such path exists. The point is that the wall is a map of the handle rather than
+a list of companies -- following any cell lands on `pngdeity`, which is what makes
+the repetition total instead of merely typographic. These paths were derived from
+each platform's URL convention and are **unverified**; see `TODO.md`.
+
+The register is **generated, not hand-written**. Its canonical data is
+`hugo-src/data/registrations.toml` -- the collection *is* that file, and the page
+is a rendering of it. `tools/ci/generateregister` reads the file and writes the
+wall between `<!-- BEGIN REGISTER -->` and `<!-- END REGISTER -->` in
+`src/links.html`, leaving all markup outside those markers untouched, because the
+static half has no server-side includes. The deploy workflow runs it after the
+Hugo build is staged.
+
 **The theme toggle.** A button showing the theme it will switch to, kept in sync
 by `theme.js` through `aria-pressed` and `aria-label` ("Switch to dark theme" /
-"Switch to light theme"). It is the only interactive chrome on the site.
+"Switch to light theme"). It is the only interactive chrome on the site. On the
+register it floats over the bleeding grid, so it inverts -- `--pg-fg` fill,
+`--pg-bg` glyph -- to separate from whatever cell is behind it. That inversion is
+scoped to `.register-page` and applies nowhere else.
 
 **The post card.** The blog's list and term pages render each post as a card: a
 surface background, the section label, the title, the summary, and a "read more"

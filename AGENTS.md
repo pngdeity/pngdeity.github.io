@@ -15,14 +15,17 @@ to avoid re-discovering the layout.
   styles in `hugo-src/assets/css/`. **There is no `themes/` directory** — the
   site owns its own theme (ananke was removed).
 - `tools/ci/` holds the Go helpers (`generatemetadata`, `validatemetadata`,
-  `sitecheck`, `healthcheck`, `manageincident`, `resolverollback`).
+  `generateregister`, `sitecheck`, `healthcheck`, `manageincident`,
+  `resolverollback`).
+- `hugo-src/data/` holds site data: `footer.toml` (the blog footer) and
+  `registrations.toml` (the register's canonical collection).
 
 ## Navigation and links (single sources)
 
 - Blog header nav: `hugo-src/layouts/_partials/site-navigation.html`
 - Blog footer links + copyright: `hugo-src/data/footer.toml`
 - Static pages (hand-maintained, mirror the footer): `src/index.html`,
-  `src/links.html`, `src/404.html`
+  `src/links.html`, `src/404.html`, `src/credits.html`
 
 Use root-absolute hrefs (`/...`). Change link lists in `data/footer.toml` and the
 static pages together.
@@ -122,6 +125,21 @@ Do not edit them by hand; change `tools/ci/generatemetadata`.
 
 `validatemetadata` runs before upload and fails the deploy if they are wrong.
 
+## The register (generated region)
+
+`src/links.html` is hand-written except for one region, delimited by
+`<!-- BEGIN REGISTER -->` and `<!-- END REGISTER -->`. `tools/ci/generateregister`
+rewrites only what is between those markers; everything outside them (the
+pre-paint script, the theme toggle, the skip link, the footer) is preserved
+verbatim. Edit the skeleton by hand, the wall never.
+
+The wall's canonical data is `hugo-src/data/registrations.toml` -- the
+collection *is* that file. Each `[[registrations]]` entry needs `name`, `url`,
+`accounts`, and `since`. Adding, removing, or renaming an institution is a data
+edit; the markup follows on the next build. The page lists every institution
+where the `pngdeity` handle is registered, so adding an entry publishes the fact
+that the account exists (see `TODO.md`).
+
 ## Workflows
 
 Four workflows; `AGENTS.md` historically named only the first.
@@ -179,6 +197,9 @@ hugo --source ./hugo-src --gc --minify   # build the blog
 hugo server --source ./hugo-src          # preview the blog
 cd tools/ci && go test ./...             # metadata tool unit tests
 
+# regenerate the register wall in src/links.html (safe to re-run, idempotent):
+cd tools/ci && go run ./generateregister -repo ../..
+
 # sitecheck needs the merged tree; stage it first or it reports false positives:
 rm -rf /tmp/stage && cp -r src /tmp/stage && mkdir -p /tmp/stage/blog
 cp -r hugo-src/public/. /tmp/stage/blog/
@@ -192,6 +213,10 @@ cd tools/ci && go fmt ./... && go vet ./... && go build ./... && go test ./...
 `sitecheck` is advisory and expects the merged tree (Hugo output staged at
 `src/blog/`), which the deploy workflow does. Running it against a bare copy of
 `src/` reports false unresolved refs.
+
+Note that `go build ./generateregister/` (with a trailing slash) fails with
+"build output already exists and is a directory"; use `go build ./...` as CI
+does.
 
 Toolchain: **Hugo and Go only.** CI pins Hugo 0.166.0
 (`.github/workflows/build-deploy.yaml`) and Go per `tools/ci/go.mod`. There is no
