@@ -1,0 +1,1088 @@
+# pngdeity registrations: one handle, every institution.
+#
+# Canonical data for the register on src/links.html. `accounts` counts the
+# separate accounts the handle holds at that institution -- the piece's one
+# datum. `since` is the earliest creation date, kept for provenance.
+#
+# Curated by hand: institutions where the handle holds more than one account
+# list only the accounts worth publishing.
+
+[[registrations]]
+name = "1911forum"
+url = "https://www.1911forum.com/"
+accounts = 1
+since = "2024-01-30"
+
+[[registrations]]
+name = "AcoustID"
+url = "https://acoustid.org/"
+accounts = 1
+since = "2024-03-25"
+
+[[registrations]]
+name = "All About Circuits"
+url = "https://forum.allaboutcircuits.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "AnandTech"
+url = "https://forums.anandtech.com/"
+accounts = 1
+since = "2026-06-18"
+
+[[registrations]]
+name = "Ardour"
+url = "https://community.ardour.org/"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "AT&T Community"
+url = "https://forums.att.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Audiokarma"
+url = "https://audiokarma.org/forums/"
+accounts = 1
+since = "2023-12-16"
+
+[[registrations]]
+name = "AVForums"
+url = "https://www.avforums.com/"
+accounts = 1
+since = "2024-06-10"
+
+[[registrations]]
+name = "AVS Forum"
+url = "https://www.avsforum.com/"
+accounts = 1
+since = "2023-10-03"
+
+[[registrations]]
+name = "Bandcamp"
+url = "https://bandcamp.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Banned.video"
+url = "https://www.banned.video/"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "BitChute"
+url = "https://www.bitchute.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Bitwarden"
+url = "https://community.bitwarden.com/"
+accounts = 1
+since = "2026-03-23"
+
+[[registrations]]
+name = "Bluesky"
+url = "https://bsky.app/profile/pngdeity.bsky.social"
+accounts = 1
+since = "2025-04-16"
+
+[[registrations]]
+name = "BookBrainz"
+url = "https://bookbrainz.org/"
+accounts = 1
+since = "2023-07-14"
+
+[[registrations]]
+name = "BreachForums"
+url = "https://breached.vc/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Camry Forums"
+url = "https://www.camryforums.com/forum/"
+accounts = 1
+since = "2023-09-24"
+
+[[registrations]]
+name = "Chess.com"
+url = "https://www.chess.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Christian Forums"
+url = "https://www.christianforums.com/"
+accounts = 1
+since = "2023-10-20"
+
+[[registrations]]
+name = "Codeberg"
+url = "https://codeberg.org/pngdeity"
+accounts = 1
+since = "2023-03-22"
+
+[[registrations]]
+name = "Cohost"
+url = "https://cohost.org/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Couchsurfing"
+url = "https://www.couchsurfing.com/"
+accounts = 1
+since = "2024-05-30"
+
+[[registrations]]
+name = "Coursera"
+url = "https://www.coursera.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "CSN BBS"
+url = "https://csnbbs.com/"
+accounts = 1
+since = "2024-06-04"
+
+[[registrations]]
+name = "Cults3D"
+url = "https://cults3d.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "CuriousCat"
+url = "https://curiouscat.live/"
+accounts = 1
+since = "2024-01-18"
+
+[[registrations]]
+name = "Debian"
+url = "https://forums.debian.net/"
+accounts = 1
+since = "2024-06-01"
+
+[[registrations]]
+name = "Deskthority"
+url = "https://deskthority.net/"
+accounts = 1
+since = "2023-10-22"
+
+[[registrations]]
+name = "DEV Community"
+url = "https://dev.to/"
+accounts = 1
+since = "2026-01-30"
+
+[[registrations]]
+name = "DeviantArt"
+url = "https://www.deviantart.com/pngdeity"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "DISboards"
+url = "https://www.disboards.com/"
+accounts = 1
+since = "2024-01-31"
+
+[[registrations]]
+name = "Discogs"
+url = "https://www.discogs.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Discord"
+url = "https://discord.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "DLive"
+url = "https://dlive.tv/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Dribbble"
+url = "https://dribbble.com/"
+accounts = 1
+since = "2023-10-17"
+
+[[registrations]]
+name = "Everything2"
+url = "https://everything2.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Facebook"
+url = "https://www.facebook.com/pngdeity"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Factorio"
+url = "https://forums.factorio.com/"
+accounts = 1
+since = "2024-06-07"
+
+[[registrations]]
+name = "Fark"
+url = "https://www.fark.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Fiverr"
+url = "https://www.fiverr.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Flickr"
+url = "https://www.flickr.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Framacolibri"
+url = "https://framacolibri.org/"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "freedesktop.org"
+url = "https://gitlab.freedesktop.org/"
+accounts = 1
+since = "2024-04-07"
+
+[[registrations]]
+name = "FurAffinity"
+url = "https://www.furaffinity.net/user/pngdeity/"
+accounts = 1
+since = "2025-11-08"
+
+[[registrations]]
+name = "Gab"
+url = "https://gab.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Garage Journal"
+url = "https://www.garagejournal.com/forum/"
+accounts = 1
+since = "2023-04-17"
+
+[[registrations]]
+name = "Geekhack"
+url = "https://geekhack.org/"
+accounts = 1
+since = "2024-06-08"
+
+[[registrations]]
+name = "Genius"
+url = "https://genius.com/"
+accounts = 1
+since = "2024-04-18"
+
+[[registrations]]
+name = "GitFlic"
+url = "https://gitflic.ru/"
+accounts = 1
+since = "2026-02-10"
+
+[[registrations]]
+name = "GitHub"
+url = "https://github.com/pngdeity"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "GitLab"
+url = "https://gitlab.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "GnuDB"
+url = "https://gnudb.org/"
+accounts = 1
+since = "2024-04-19"
+
+[[registrations]]
+name = "Goodreads"
+url = "https://www.goodreads.com/"
+accounts = 1
+since = "2023-08-29"
+
+[[registrations]]
+name = "GrapheneOS"
+url = "https://discuss.grapheneos.org/"
+accounts = 1
+since = "2023-07-01"
+
+[[registrations]]
+name = "Greasy Fork"
+url = "https://greasyfork.org/"
+accounts = 1
+since = "2026-01-19"
+
+[[registrations]]
+name = "Gumroad"
+url = "https://gumroad.com/"
+accounts = 1
+since = "2024-01-01"
+
+[[registrations]]
+name = "Hackaday"
+url = "https://hackaday.io/"
+accounts = 1
+since = "2024-04-18"
+
+[[registrations]]
+name = "Hacker News"
+url = "https://news.ycombinator.com/user?id=pngdeity"
+accounts = 1
+since = "2023-07-27"
+
+[[registrations]]
+name = "HackForums"
+url = "https://hackforums.net/"
+accounts = 1
+since = "2023-03-21"
+
+[[registrations]]
+name = "Hobby-Machinist"
+url = "https://www.hobby-machinist.com/"
+accounts = 1
+since = "2023-06-25"
+
+[[registrations]]
+name = "Home Assistant"
+url = "https://community.home-assistant.io/"
+accounts = 1
+since = "2024-04-18"
+
+[[registrations]]
+name = "Home Shop Machinist"
+url = "https://bbs.homeshopmachinist.net/"
+accounts = 1
+since = "2024-06-06"
+
+[[registrations]]
+name = "HVAC-Talk"
+url = "https://hvac-talk.com/vbb/"
+accounts = 1
+since = "2024-05-22"
+
+[[registrations]]
+name = "I Forge Iron"
+url = "https://www.iforgeiron.com/"
+accounts = 1
+since = "2024-01-30"
+
+[[registrations]]
+name = "I2P Forum"
+url = "https://i2pforum.net/"
+accounts = 1
+since = "2024-01-28"
+
+[[registrations]]
+name = "iFixit"
+url = "https://www.ifixit.com/"
+accounts = 1
+since = "2024-01-31"
+
+[[registrations]]
+name = "IMDb"
+url = "https://www.imdb.com/"
+accounts = 1
+since = "2023-09-21"
+
+[[registrations]]
+name = "Instagram"
+url = "https://www.instagram.com/pngdeity/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Instructables"
+url = "https://www.instructables.com/"
+accounts = 1
+since = "2023-05-25"
+
+[[registrations]]
+name = "Jitsi"
+url = "https://community.jitsi.org/"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "Keybase"
+url = "https://keybase.io/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Klipsch"
+url = "https://community.klipsch.com/"
+accounts = 1
+since = "2024-08-20"
+
+[[registrations]]
+name = "LBRY"
+url = "https://lbry.tv/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "LessWrong"
+url = "https://www.lesswrong.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Letterboxd"
+url = "https://letterboxd.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Level1Techs"
+url = "https://forum.level1techs.com/"
+accounts = 1
+since = "2024-01-30"
+
+[[registrations]]
+name = "Library Genesis"
+url = "https://libgen.li/"
+accounts = 1
+since = "2026-08-17"
+
+[[registrations]]
+name = "LibraryThing"
+url = "https://www.librarything.com/"
+accounts = 1
+since = "2023-09-20"
+
+[[registrations]]
+name = "LIFX"
+url = "https://cloud.lifx.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/pngdeity"
+accounts = 1
+since = "2022-11-17"
+
+[[registrations]]
+name = "Linktree"
+url = "https://linktr.ee/pngdeity"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "Linux.org"
+url = "https://www.linux.org/"
+accounts = 1
+since = "2023-10-17"
+
+[[registrations]]
+name = "LinuxFest Northwest"
+url = "https://discuss.lfnw.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "LiveJournal"
+url = "https://www.livejournal.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Locals"
+url = "https://locals.com/"
+accounts = 1
+since = "2023-08-07"
+
+[[registrations]]
+name = "LocalWiki"
+url = "https://localwiki.org/"
+accounts = 1
+since = "2023-11-27"
+
+[[registrations]]
+name = "LumberJocks"
+url = "https://www.lumberjocks.com/"
+accounts = 1
+since = "2024-01-17"
+
+[[registrations]]
+name = "LWN"
+url = "https://lwn.net/"
+accounts = 1
+since = "2024-10-23"
+
+[[registrations]]
+name = "Manjaro"
+url = "https://forum.manjaro.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Mastodon"
+url = "https://mastodon.social/@pngdeity"
+accounts = 1
+since = "2023-07-27"
+
+[[registrations]]
+name = "Medium"
+url = "https://medium.com/"
+accounts = 1
+since = "2023-09-18"
+
+[[registrations]]
+name = "Meetup"
+url = "https://www.meetup.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "MeWe"
+url = "https://mewe.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Minds"
+url = "https://www.minds.com/"
+accounts = 1
+since = "2023-09-30"
+
+[[registrations]]
+name = "Modular"
+url = "https://forum.modular.com/"
+accounts = 1
+since = "2026-06-07"
+
+[[registrations]]
+name = "Mozilla: Add-ons"
+url = "https://addons.mozilla.org/"
+accounts = 1
+since = "2024-01-28"
+
+[[registrations]]
+name = "Mozilla: Bugzilla"
+url = "https://bugzilla.mozilla.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "MusicBrainz"
+url = "https://musicbrainz.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "My Digital Life"
+url = "https://forums.mydigitallife.net/"
+accounts = 1
+since = "2023-03-23"
+
+[[registrations]]
+name = "MyAnimeList"
+url = "https://myanimelist.net/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "MyFitnessPal"
+url = "https://www.myfitnesspal.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "MySpace"
+url = "https://myspace.com/"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "NationStates"
+url = "https://www.nationstates.net/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "NetworkChuck"
+url = "https://learn.networkchuck.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Nextdoor"
+url = "https://nextdoor.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Nim"
+url = "https://forum.nim-lang.org/"
+accounts = 1
+since = "2023-09-18"
+
+[[registrations]]
+name = "Odysee"
+url = "https://odysee.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Open Hub"
+url = "https://www.openhub.net/"
+accounts = 1
+since = "2023-03-08"
+
+[[registrations]]
+name = "Open Source Initiative"
+url = "https://opensource.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "OpenBenchmarking"
+url = "https://openbenchmarking.org/"
+accounts = 1
+since = "2024-04-04"
+
+[[registrations]]
+name = "OpenCores"
+url = "https://opencores.org/"
+accounts = 1
+since = "2024-10-18"
+
+[[registrations]]
+name = "Opensource.com"
+url = "https://opensource.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "OpenStreetMap"
+url = "https://www.openstreetmap.org/"
+accounts = 1
+since = "2023-09-06"
+
+[[registrations]]
+name = "OpenWrt"
+url = "https://forum.openwrt.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "ORCID"
+url = "https://orcid.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Organ Forum"
+url = "https://organforum.com/forums/"
+accounts = 1
+since = "2024-07-16"
+
+[[registrations]]
+name = "OSDev"
+url = "https://forum.osdev.org/"
+accounts = 1
+since = "2024-06-04"
+
+[[registrations]]
+name = "OWWM"
+url = "https://owwm.org/"
+accounts = 1
+since = "2023-05-18"
+
+[[registrations]]
+name = "Parler"
+url = "https://parler.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Pastebin"
+url = "https://pastebin.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Patreon"
+url = "https://www.patreon.com/"
+accounts = 1
+since = "2024-01-22"
+
+[[registrations]]
+name = "PDF Coffee"
+url = "https://pdfcoffee.com/"
+accounts = 1
+since = "2024-01-17"
+
+[[registrations]]
+name = "Pinterest"
+url = "https://www.pinterest.com/pngdeity/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "PIXLS.US"
+url = "https://discuss.pixls.us/"
+accounts = 1
+since = "2023-06-11"
+
+[[registrations]]
+name = "PlayStation Network"
+url = "https://www.playstation.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Plumbing Forum"
+url = "https://www.plbg.com/forum/"
+accounts = 1
+since = "2024-01-17"
+
+[[registrations]]
+name = "Practical Machinist"
+url = "https://www.practicalmachinist.com/"
+accounts = 1
+since = "2023-10-26"
+
+[[registrations]]
+name = "Precious Plastic"
+url = "https://community.preciousplastic.com/"
+accounts = 1
+since = "2024-05-24"
+
+[[registrations]]
+name = "Quora"
+url = "https://www.quora.com/"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "Ravelry"
+url = "https://www.ravelry.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Reddit"
+url = "https://www.reddit.com/"
+accounts = 1
+since = "2023-05-12"
+
+[[registrations]]
+name = "Revolt"
+url = "https://app.revolt.chat/"
+accounts = 1
+since = "2023-03-07"
+
+[[registrations]]
+name = "Roblox"
+url = "https://www.roblox.com/"
+accounts = 1
+since = "2023-09-19"
+
+[[registrations]]
+name = "Rosetta Code"
+url = "https://rosettacode.org/"
+accounts = 1
+since = "2023-09-20"
+
+[[registrations]]
+name = "Rumble"
+url = "https://rumble.com/"
+accounts = 1
+since = "2023-04-13"
+
+[[registrations]]
+name = "Ruqqus"
+url = "https://ruqqus.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "RuTracker"
+url = "https://rutracker.org/"
+accounts = 1
+since = "2024-09-03"
+
+[[registrations]]
+name = "Scrap Metal Forum"
+url = "https://scrapmetalforum.com/"
+accounts = 1
+since = "2025-04-18"
+
+[[registrations]]
+name = "Scribd"
+url = "https://www.scribd.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "ServeTheHome"
+url = "https://forums.servethehome.com/"
+accounts = 1
+since = "2024-04-09"
+
+[[registrations]]
+name = "Snapchat"
+url = "https://www.snapchat.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "SoundCloud"
+url = "https://soundcloud.com/pngdeity"
+accounts = 1
+since = "2023-09-20"
+
+[[registrations]]
+name = "SourceForge"
+url = "https://sourceforge.net/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Spiceworks"
+url = "https://community.spiceworks.com/"
+accounts = 1
+since = "2023-09-20"
+
+[[registrations]]
+name = "Sporcle"
+url = "https://www.sporcle.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Stack Exchange"
+url = "https://stackexchange.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Strava"
+url = "https://www.strava.com/"
+accounts = 1
+since = "2023-09-24"
+
+[[registrations]]
+name = "Styleforum"
+url = "https://www.styleforum.net/"
+accounts = 1
+since = "2023-11-16"
+
+[[registrations]]
+name = "Substack"
+url = "https://substack.com/"
+accounts = 1
+since = "2023-09-15"
+
+[[registrations]]
+name = "Telegram"
+url = "https://t.me/pngdeity"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Terry Love"
+url = "https://terrylove.com/forums/"
+accounts = 1
+since = "2024-01-10"
+
+[[registrations]]
+name = "Thangs"
+url = "https://thangs.com/"
+accounts = 1
+since = "2024-08-19"
+
+[[registrations]]
+name = "Thingiverse"
+url = "https://www.thingiverse.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Threads"
+url = "https://www.threads.net/@pngdeity"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "TikTok"
+url = "https://www.tiktok.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Tom's Hardware"
+url = "https://forums.tomshardware.com/"
+accounts = 1
+since = "2023-09-05"
+
+[[registrations]]
+name = "ToolGuyd"
+url = "https://www.toolguyd.com/"
+accounts = 1
+since = "2023-06-26"
+
+[[registrations]]
+name = "TOP500"
+url = "https://top500.org/"
+accounts = 1
+since = "2023-03-11"
+
+[[registrations]]
+name = "Tor Project"
+url = "https://forum.torproject.org/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Truth Social"
+url = "https://truthsocial.com/"
+accounts = 1
+since = "2025-02-16"
+
+[[registrations]]
+name = "Tumblr"
+url = "https://www.tumblr.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Twitch"
+url = "https://www.twitch.tv/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Twitter"
+url = "https://x.com/"
+accounts = 1
+since = "2022-11-23"
+
+[[registrations]]
+name = "Udemy"
+url = "https://www.udemy.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Uncyclopedia"
+url = "https://en.uncyclopedia.co/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Upwork"
+url = "https://www.upwork.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Vimeo"
+url = "https://vimeo.com/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Vintage Machinery"
+url = "http://www.vintagemachinery.org/"
+accounts = 1
+since = "2023-05-18"
+
+[[registrations]]
+name = "Venmo"
+url = "https://venmo.com/pngdeity"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "VSCO"
+url = "https://vsco.co/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "WeldingWeb"
+url = "https://weldingweb.com/"
+accounts = 1
+since = "2024-05-29"
+
+[[registrations]]
+name = "Wikipedia"
+url = "https://en.wikipedia.org/"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
+name = "Wikipedia Sucks"
+url = "https://wikipediasucks.co/"
+accounts = 1
+since = "2024-04-21"
+
+[[registrations]]
+name = "Wikipediocracy"
+url = "https://wikipediocracy.com/"
+accounts = 1
+since = "2023-09-01"
+
+[[registrations]]
+name = "Woodworking Talk"
+url = "https://www.woodworkingtalk.com/"
+accounts = 1
+since = "2024-09-06"
+
+[[registrations]]
+name = "WT.Social"
+url = "https://wt.social/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "XDA Forums"
+url = "https://xdaforums.com/"
+accounts = 1
+since = "2026-08-07"
+
+[[registrations]]
+name = "Yeggi"
+url = "https://www.yeggi.com/"
+accounts = 1
+since = "2023-09-22"
+
+[[registrations]]
+name = "Yesterday's Tractors"
+url = "https://forums.yesterdaystractors.com/"
+accounts = 1
+since = "2024-05-20"
+
+[[registrations]]
+name = "YouTube"
+url = "https://www.youtube.com/"
+accounts = 1
+since = "2024-05-20"
