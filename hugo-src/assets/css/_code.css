@@ -1,24 +1,24 @@
-pre, .pre  {
+/* Code block styles, concatenated into /blog/css/site.css by site-style.html. */
+
+pre,
+.pre {
   overflow-x: auto;
   overflow-y: hidden;
-  overflow:   scroll;
+  overflow: scroll;
 }
 
-
-pre  code {
+pre code {
   display: block;
   padding: 1.5em 1.5em;
   white-space: pre;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 2;
-
 }
 
 pre {
   background-color: #222;
   color: #ddd;
   white-space: pre;
-
   hyphens: none;
   position: relative;
 }
