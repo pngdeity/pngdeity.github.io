@@ -1,3 +1,7 @@
+/* Design tokens. Single source of truth: DESIGN.md.
+   The same --pg-* set is declared independently in
+   hugo-src/assets/ananke/css/theme.css (the blog half). There is no shared
+   build step, so a change here MUST be mirrored there or the site drifts. */
 :root,
 html[data-theme="light"] {
   --pg-bg: #f4f4f4;
@@ -5,8 +9,8 @@ html[data-theme="light"] {
   --pg-fg-muted: #5a5a5a;
   --pg-surface: #ffffff;
   --pg-border: #d0d0d0;
-  --pg-link: #0b3d91;
-  --pg-link-hover: #2a5fd0;
+  --pg-link: #9e141d;
+  --pg-link-hover: #bd3c44;
 }
 
 html[data-theme="dark"] {

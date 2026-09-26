@@ -34,6 +34,24 @@ Use root-absolute links (`/...`) everywhere.
 
 The static lists mirror `data/footer.toml` by hand; update both when links change.
 
+## Design and identity
+
+`DESIGN.md` records the site's visual identity in the
+[DESIGN.md format](https://github.com/google-labs-code/design.md): design tokens
+in YAML front matter, and the reasoning behind them in prose.
+
+The short version:
+
+- The brand is the handle **`pngdeity`**, always lowercase. It is a username, not
+  a title, and it is never capitalised or decorated.
+- The motif is **the image that looks back** — the eye/portal favicon, the
+  homepage photograph, and the Paalen quotation on the 404 page.
+- Colour, type, and layout rules live in the document, along with explicit
+  Do's and Don'ts.
+
+`TODO.md` lists what is not yet settled, including the light-mode accent colour
+and a possible CI check that the two stylesheets' tokens stay in sync.
+
 ## Theming (light and dark)
 
 The site follows the OS color scheme by default and offers a manual toggle that

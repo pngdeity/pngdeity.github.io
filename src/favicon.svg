@@ -6,8 +6,8 @@
     .glint { fill: #f4f4f4; }
     @media (prefers-color-scheme: light) {
       .tile { fill: #f4f4f4; }
-      .ring { stroke: #0b3d91; }
-      .pupil { fill: #0b3d91; }
+      .ring { stroke: #9e141d; }
+      .pupil { fill: #9e141d; }
       .glint { fill: #f4f4f4; }
     }
   </style>

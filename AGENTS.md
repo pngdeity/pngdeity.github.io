@@ -24,6 +24,25 @@ to avoid re-discovering the layout.
 Use root-absolute hrefs (`/...`). Change link lists in `data/footer.toml` and the
 static pages together.
 
+## Design identity
+
+`DESIGN.md` is the single source of truth for the visual identity: the pngdeity
+brand, its motifs, the colour/type/layout rules, and the `Do's and Don'ts`. Read
+it before changing anything visual. `TODO.md` holds what is still open.
+
+Hard rules, in short:
+
+- The brand is `pngdeity`, **always lowercase**, in titles and prose alike. Never
+  capitalise it, never set it in display capitals, never decorate it with a logo,
+  halo, or icon.
+- **Do not invent a tagline.** The old site title `The End of the Internet` was
+  an accident; it is retired and must not be replaced by another arbitrary
+  phrase.
+- The homepage stays brief: image, name, caption, six links. Nothing else.
+- The header/footer band on the blog stays dark with light text in **both**
+  themes.
+- `[*]` is site identity, injected by CSS on the homepage and set in monospace.
+
 ## Theming (light/dark)
 
 - One convention: a `data-theme` attribute on `<html>` (`light`/`dark`), a

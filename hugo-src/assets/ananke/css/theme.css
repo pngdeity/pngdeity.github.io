@@ -1,3 +1,8 @@
+/* Design tokens. Single source of truth: DESIGN.md.
+   This is the blog half's independent copy of the --pg-* set; the static half
+   declares the same tokens in src/style.css. There is no shared build step, so
+   a change here MUST be mirrored there or the site drifts.
+   The header/footer band additionally keeps its light text in both themes. */
 :root,
 html[data-theme="light"] {
   --pg-bg: #f4f4f4;
@@ -5,8 +10,8 @@ html[data-theme="light"] {
   --pg-fg-muted: #5a5a5a;
   --pg-surface: #ffffff;
   --pg-border: #d0d0d0;
-  --pg-link: #0b3d91;
-  --pg-link-hover: #2a5fd0;
+  --pg-link: #9e141d;
+  --pg-link-hover: #bd3c44;
   --pg-header-bg: #111111;
   --pg-header-fg: #f4f4f4;
 }
