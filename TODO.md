@@ -47,14 +47,21 @@ remains open here is only the static-page drift above.
 `DESIGN.md` describes the settled system; these pages should be brought into
 line with it, or the description should be narrowed.
 
-## Unreferenced image assets
+## Image assets that are deliberately kept
 
-`src/pngdeity_files/gladstone.jpg` and `gladstone_modified.jpg` are no longer
-referenced by any page since the homepage moved to `gladstone-at-work.jpg`.
-Either delete them or document why they are kept. (Deletion was offered and not
-yet answered.)
+`src/my-favorite-meme.jpg` and `src/pngdeity_files/extermination-of-evil-shoki.jpg`
+are not referenced by any page and are kept on purpose. Do not propose them for
+deletion or optimization.
 
-## `content/develop-drafts` is behind `main`
+`gladstone.jpg` and `gladstone_modified.jpg` were removed in `e6f77a0`, and
+`favicon-16.png` with them (`favicon.ico` already embeds a 16x16 frame).
 
-The branch has not been re-synced since the earlier sync at `b500c59`. It should
-be merged up with `main` before it accumulates more conflict surface.
+## `content/develop-drafts` has diverged from `main`
+
+Not merely behind: the branch carries 13 content commits of its own (the Open
+Source on Offense draft, Wikipedia editing, and revisions to `beets-config`,
+`stealing-github-commits`, and `pressing-work`) while missing everything `main`
+gained. It is a two-way merge, not a fast-forward resync.
+
+All posts on the branch are `draft = true`, so merging it cannot publish
+anything. Last synced with `main` at `b500c59`.
