@@ -1,0 +1,4 @@
+{{- with resources.Get "js/theme.js" -}}
+  {{- $js := . | resources.Minify | resources.Fingerprint -}}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{- end -}}

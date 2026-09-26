@@ -3,74 +3,63 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>The End of the Internet</title>
+		<link rel='stylesheet' type='text/css' href='/style.css'>
     <style>
-        body {
-            background-color: black;
-            color: rgb(159, 32, 15);
-            margin: 0;
-            padding: 8px;
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .wrap {
-            display: block;
-            text-align: center;
-        }
-        img {
-            margin-bottom: 10px;
-        }
-        table {
-            border-spacing: 2px 2px;
-            color: rgb(0, 0, 0);
-            font-size: 16px;
-            border-collapse: separate;
-            margin: 0 auto;
-            text-align: start;
-        }
-        td {
-            padding: 4px;
-        }
-        a {
-            color: rgb(159, 32, 15);
-            text-decoration: underline;
-            cursor: pointer;
-        }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        max-width: none;
+        padding: 8px;
+        font-family: sans-serif;
+      }
+      .wrap {
+        display: block;
+        text-align: center;
+      }
+      .portal {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 16px;
+        text-align: left;
+      }
+      .portal li {
+        margin: 0;
+        padding: 4px 0;
+      }
     </style>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('pg-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="/theme.js" defer></script>
 	</head>
 
 	<body>
-		<div class="wrap">
+		<a href="#main-content" class="pg-skip-link">Skip to content</a>
+		<button type="button" class="pg-theme-toggle" aria-pressed="false" aria-label="Switch to dark theme" title="Switch theme"><span class="pg-theme-toggle__icon pg-theme-toggle__icon--moon" aria-hidden="true">&#9789;</span><span class="pg-theme-toggle__icon pg-theme-toggle__icon--sun" aria-hidden="true">&#9728;</span></button>
+		<div class="wrap" id="main-content">
 		<img src="/pngdeity_files/gladstone.jpg" alt="Gladstone, a black cat wearing a bow tie" width="440" height="648" style="aspect-ratio: 4 / 5; width: min(440px, 80vw); height: auto; object-fit: cover; object-position: 50% 30%;">
                 <br>
                 Through the portal.
                 <br>
-		<table>
-		    <tbody>
-            <tr>
-                <td>
-                <a href="/blog/">[*] Blog</a>
-                </td>
-            </tr>
-			<tr>
-			    <td>
-			    <a href="/pngdeity_files/resume.pdf">[*] Resumé</a>
-			    </td>
-			</tr>
-            <tr>
-			    <td>
-		            <a href="/pngdeity_files/vcard.vcf">[*] Contact</a>
-			    </td>
-			</tr>
-            <tr>
-                <td>
-                <a href="/links.html">[*] Links</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+		<ul class="portal">
+			<li><a href="/blog/">[*] Blog</a></li>
+			<li><a href="/pngdeity_files/resume.pdf">[*] Resumé</a></li>
+			<li><a href="/pngdeity_files/vcard.vcf">[*] Contact</a></li>
+			<li><a href="/links.html">[*] Links</a></li>
+		</ul>
 		</div>
         </body>
 </html>

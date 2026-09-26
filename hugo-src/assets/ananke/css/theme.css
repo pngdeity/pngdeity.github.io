@@ -7,6 +7,8 @@ html[data-theme="light"] {
   --pg-border: #d0d0d0;
   --pg-link: #0b3d91;
   --pg-link-hover: #2a5fd0;
+  --pg-header-bg: #111111;
+  --pg-header-fg: #f4f4f4;
 }
 
 html[data-theme="dark"] {
@@ -17,6 +19,8 @@ html[data-theme="dark"] {
   --pg-border: #333333;
   --pg-link: #ff6f5e;
   --pg-link-hover: #ff9c90;
+  --pg-header-bg: #000000;
+  --pg-header-fg: #f4f4f4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +32,8 @@ html[data-theme="dark"] {
     --pg-border: #333333;
     --pg-link: #ff6f5e;
     --pg-link-hover: #ff9c90;
+    --pg-header-bg: #000000;
+    --pg-header-fg: #f4f4f4;
   }
 }
 
@@ -36,21 +42,16 @@ html {
 }
 
 body {
-  margin: 40px auto;
-  max-width: 800px;
-  line-height: 1.6;
-  font-size: 18px;
-  padding: 0 10px;
   background-color: var(--pg-bg);
   color: var(--pg-fg);
 }
 
 a {
   color: var(--pg-link);
-  text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: var(--pg-link-hover);
 }
 
@@ -60,39 +61,79 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-ul {
-  list-style-type: "—";
+article a,
+.nested-links a {
+  color: var(--pg-link);
 }
 
-li {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 0.7em;
+/* Text-only share links (icons disabled) need separation. */
+.ananke-socials .ananke-social-link {
+  margin-right: 0.75rem;
 }
 
-h1,
-h2,
-h3 {
-  line-height: 1.2;
+.ananke-socials .ananke-social-link:last-child {
+  margin-right: 0;
 }
 
-ul.links {
-  list-style-type: none;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-evenly;
+/* Tachyons utilities are light-tuned; retarget the ones the theme emits. */
+.bg-near-white,
+.bg-white,
+.bg-light-gray {
+  background-color: var(--pg-surface) !important;
 }
 
-.links li {
-  margin-top: 0px;
-  margin-bottom: 0px;
+.bg-black {
+  background-color: var(--pg-header-bg) !important;
 }
 
-#footer {
-  display: table;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+body,
+.mid-gray,
+.gray,
+.dark-gray,
+.near-black,
+.black,
+.light-silver {
+  color: var(--pg-fg);
+}
+
+.mid-gray,
+.gray,
+.dark-gray {
+  color: var(--pg-fg-muted);
+}
+
+/* The header and footer paint a dark band in both themes, so their text
+   utilities must stay light regardless of the page foreground. */
+.bg-black,
+.bg-black .white-90,
+.bg-black .white-80,
+.bg-black .white-70,
+.bg-black .light-silver,
+header .white-90,
+header .white-80,
+header .white-70,
+footer .white-90,
+footer .white-80,
+footer .white-70 {
+  color: var(--pg-header-fg);
+}
+
+.b--moon-gray,
+.b--black-10 {
+  border-color: var(--pg-border) !important;
+}
+
+.hover-bg-moon-gray:hover {
+  background-color: var(--pg-border) !important;
+}
+
+blockquote {
+  border-left-color: var(--pg-border);
+  color: var(--pg-fg-muted);
+}
+
+hr {
+  border-color: var(--pg-border);
 }
 
 .pg-skip-link {

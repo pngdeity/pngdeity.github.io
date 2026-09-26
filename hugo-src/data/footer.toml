@@ -9,6 +9,10 @@ name = 'Blog'
 url = '/blog/'
 
 [[primary]]
+name = 'Tags'
+url = '/blog/tags/'
+
+[[primary]]
 name = 'Resumé'
 url = '/pngdeity_files/resume.pdf'
 
