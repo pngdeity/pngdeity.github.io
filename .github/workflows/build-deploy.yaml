@@ -23,7 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          submodules: recursive
           fetch-depth: 0
       - name: Restore Hugo Build Cache
         id: cache-hugo
@@ -31,22 +30,12 @@ jobs:
         with:
           path: hugo-src/public
           key: hugo-site-${{ runner.os }}-${{ hashFiles('hugo-src/**') }}
-      - name: Setup Node.js
-        if: steps.cache-hugo.outputs.cache-hit != 'true'
-        uses: actions/setup-node@v7
-        with:
-          node-version-file: '.node-version'
       - name: Setup Hugo
         if: steps.cache-hugo.outputs.cache-hit != 'true'
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
-      - name: Install Node.js dependencies
-        if: steps.cache-hugo.outputs.cache-hit != 'true'
-        run: |
-          npm ci
-          echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
       - name: Build Hugo
         if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
