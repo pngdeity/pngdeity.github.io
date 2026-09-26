@@ -56,12 +56,8 @@ deletion or optimization.
 `gladstone.jpg` and `gladstone_modified.jpg` were removed in `e6f77a0`, and
 `favicon-16.png` with them (`favicon.ico` already embeds a 16x16 frame).
 
-## `content/develop-drafts` has diverged from `main`
+## Keeping `content/develop-drafts` in sync
 
-Not merely behind: the branch carries 13 content commits of its own (the Open
-Source on Offense draft, Wikipedia editing, and revisions to `beets-config`,
-`stealing-github-commits`, and `pressing-work`) while missing everything `main`
-gained. It is a two-way merge, not a fast-forward resync.
-
-All posts on the branch are `draft = true`, so merging it cannot publish
-anything. Last synced with `main` at `b500c59`.
+The branch accumulates WIP posts; re-sync it periodically so the merge does not
+drift. It was last merged with `main` in `787c96f` (a two-way merge, not a
+fast-forward, since the branch carries content commits of its own).
