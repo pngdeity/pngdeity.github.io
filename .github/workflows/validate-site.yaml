@@ -5,7 +5,7 @@ on:
 permissions:
   contents: read
 env:
-  HUGO_VERSION: 0.154.4
+  HUGO_VERSION: 0.166.0
 jobs:
   sitecheck:
     runs-on: ubuntu-latest

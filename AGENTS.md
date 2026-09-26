@@ -166,6 +166,11 @@ build. `hugo-src/archetypes/default.md` is the template.
   `.Language.Locale`, `.Language.Direction`, and `hugo.Data` (not `.Site.Data`).
   The build is warning-free; keep it that way rather than reintroducing the
   deprecated spellings from older theme code.
+- **The CI Hugo pin must match the local one.** `.Language.Locale` does not
+  exist before Hugo 0.158, so the tree built fine on a newer local Hugo and
+  failed in CI when the pin lagged at 0.154.4. Before editing templates, check
+  that `hugo version` and `HUGO_VERSION` in `.github/workflows/*.yaml` agree;
+  build with the pinned release (or bump the pin) when the two have diverged.
 
 ## Commands
 
@@ -188,7 +193,7 @@ cd tools/ci && go fmt ./... && go vet ./... && go build ./... && go test ./...
 `src/blog/`), which the deploy workflow does. Running it against a bare copy of
 `src/` reports false unresolved refs.
 
-Toolchain: **Hugo and Go only.** CI pins Hugo 0.154.4
+Toolchain: **Hugo and Go only.** CI pins Hugo 0.166.0
 (`.github/workflows/build-deploy.yaml`) and Go per `tools/ci/go.mod`. There is no
 Node toolchain — no `package.json`, no `.node-version`, and no Sass/PostCSS
 pipeline.
