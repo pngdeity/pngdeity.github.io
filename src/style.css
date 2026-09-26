@@ -45,6 +45,14 @@ body {
   line-height: 1.6;
   font-size: 18px;
   padding: 0 10px;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   background-color: var(--pg-bg);
   color: var(--pg-fg);
 }
