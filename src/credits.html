@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>The End of the Internet</title>
+		<title>Credits | The End of the Internet</title>
 		<link rel='stylesheet' type='text/css' href='/style.css'>
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -23,17 +23,29 @@
         display: block;
         text-align: center;
       }
-      .portal {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-size: 16px;
-        text-align: left;
+      .brand {
+        font-size: 1.5em;
+        font-weight: normal;
+        margin: 0 0 1em;
       }
-      .portal li {
-        margin: 0;
-        padding: 4px 0;
+      .credits {
+        text-align: left;
+        max-width: 40em;
+        margin: 0 auto;
+      }
+      .credits h2 {
+        font-size: 1.1em;
+        margin-bottom: 0.5em;
+      }
+      .credits p {
+        margin: 0.5em 0;
+      }
+      .credits .meta {
+        font-size: 14px;
+      }
+      .copyright {
+        font-size: 14px;
+        margin-top: 2em;
       }
     </style>
     <script>
@@ -54,17 +66,24 @@
 		<a href="#main-content" class="pg-skip-link">Skip to content</a>
 		<button type="button" class="pg-theme-toggle" aria-pressed="false" aria-label="Switch to dark theme" title="Switch theme"><span class="pg-theme-toggle__icon pg-theme-toggle__icon--moon" aria-hidden="true">&#9789;</span><span class="pg-theme-toggle__icon pg-theme-toggle__icon--sun" aria-hidden="true">&#9728;</span></button>
 		<div class="wrap" id="main-content">
-		<img src="/pngdeity_files/gladstone.jpg" alt="Gladstone, a black cat wearing a bow tie" width="440" height="648" style="aspect-ratio: 4 / 5; width: min(440px, 80vw); height: auto; object-fit: cover; object-position: 50% 30%;">
-                <br>
-                Through the portal.
-                <br>
-		<ul class="portal">
-			<li><a href="/blog/">[*] Blog</a></li>
-			<li><a href="/pngdeity_files/resume.pdf">[*] Resumé</a></li>
-			<li><a href="/pngdeity_files/vcard.vcf">[*] Contact</a></li>
-			<li><a href="/links.html">[*] Links</a></li>
-			<li><a href="/credits.html">[*] Credits</a></li>
-		</ul>
+		<h1 class="brand">Credits</h1>
+		<div class="credits">
+			<h2>Gladstone</h2>
+			<p>
+				<img src="/pngdeity_files/gladstone.jpg" alt="Gladstone, a black cat wearing a bow tie" width="120" height="177" style="aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%;">
+			</p>
+			<p>
+				&ldquo;Gladstone ready for 2017 Budget&rdquo; by <strong>HM Treasury</strong>, 22 November 2017.
+				Cropped from the original. Via
+				<a href="https://commons.wikimedia.org/wiki/File:Gladstone_ready_for_2017_Budget.jpg">Wikimedia Commons</a>,
+				licensed under the
+				<a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
+			</p>
+			<p class="meta">
+				Contains public sector information licensed under the Open Government Licence v3.0.
+			</p>
+		</div>
+		<p class="copyright"><a href="/">Home</a> · <a href="/links.html">Links</a> · <a href="/blog/">Blog</a></p>
 		</div>
         </body>
 </html>
