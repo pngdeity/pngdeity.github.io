@@ -290,7 +290,11 @@ mean inventing entries.
 
 Every cell is a link, and the whole cell is the target -- the wall carries no
 inline link styling. Cells are filled by `--pg-surface` on hover, and every cell
-carries a `1px` `--pg-border` hairline. Under the cursor the cell's own text
+carries a `1px` `--pg-border` hairline. Cell text is centred, both lines, so the
+wall reads as a field of stamps rather than a ragged-edged list. The column floor
+is `13rem` against a `6rem` row, which is sized by the longest institution name
+rather than by taste: an earlier `11rem`/`5rem` left the longest entries flush
+against the cell border, with no slack between the text and the rule. Under the cursor the cell's own text
 resolves: the handle moves from `--pg-fg-muted` to `--pg-link` and the
 institution name to the full foreground, so the wall reads itself where the
 pointer is. This is a state, not an animation -- it is the same category as the
