@@ -15,7 +15,7 @@ defaults:
   run:
     shell: bash
 env:
-  HUGO_VERSION: 0.154.4
+  HUGO_VERSION: 0.166.0
 jobs:
   build_hugo:
     runs-on: ubuntu-latest
