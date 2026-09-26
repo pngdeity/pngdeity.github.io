@@ -1,0 +1,26 @@
+{{- /*
+  Resolve a page's featured image, or return an empty string.
+
+  Prefers a `featured_image` front-matter value (resolved as a page resource
+  when one matches, otherwise as a static path), and otherwise looks for a
+  page-bundle image whose name contains "feature" or "cover".
+
+  Our content currently sets none, so this returns "" everywhere.
+*/ -}}
+{{- $linkToCover := "" -}}
+{{- $matches := "feature,cover" -}}
+
+{{- with .Params.featured_image -}}
+  {{- $linkToCover = strings.Trim . "/" | urls.AbsURL -}}
+  {{- with $.Resources.GetMatch . -}}
+    {{- $linkToCover = .RelPermalink -}}
+  {{- end -}}
+{{- else -}}
+  {{- with .Resources.ByType "image" -}}
+    {{- with .GetMatch (fmt.Printf "**{%s}*" $matches) -}}
+      {{- $linkToCover = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $linkToCover -}}

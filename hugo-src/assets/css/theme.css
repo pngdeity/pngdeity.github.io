@@ -1,3 +1,31 @@
+/* Reading register: Bitter, a slab serif, used for blog prose only.
+   Licensed under the SIL Open Font License 1.1; see assets/fonts/bitter/OFL.txt.
+   The chrome (nav, labels, metadata, share links, toggle) stays on the system
+   stack declared by .pg-site, so the two registers read as distinct. */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/blog/fonts/bitter/normal-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/blog/fonts/bitter/normal-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/blog/fonts/bitter/italic-400.woff2") format("woff2");
+}
+
 /* Design tokens. Single source of truth: DESIGN.md.
    This is the blog half's independent copy of the --pg-* set; the static half
    declares the same tokens in src/style.css. There is no shared build step, so
@@ -49,6 +77,34 @@ html {
 body {
   background-color: var(--pg-bg);
   color: var(--pg-fg);
+}
+
+.pg-site {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+/* The header/footer band is dark in both themes, so it sets its own colours
+   rather than inheriting the page foreground. */
+.pg-header-band {
+  background-color: var(--pg-header-bg);
+  color: var(--pg-header-fg);
+}
+
+.pg-header-band .white-90,
+.pg-header-band .white-80,
+.pg-header-band .white-70,
+.pg-header-band .light-silver,
+.pg-header-band h1,
+.pg-header-band h2,
+.pg-header-band a:not(:hover) {
+  color: var(--pg-header-fg);
 }
 
 a {
@@ -198,4 +254,42 @@ html[data-theme="dark"] .pg-theme-toggle__icon--sun {
   html:not([data-theme="light"]) .pg-theme-toggle__icon--sun {
     display: inline;
   }
+}
+
+/* Reading register applied to blog prose only. The chrome keeps .pg-site.
+   The post body is the `.nested-copy-line-height` div in _default/single.html;
+   `article` covers it and the card summaries. */
+article .nested-copy-line-height,
+article .nested-copy-line-height p,
+article .nested-copy-line-height li,
+article .nested-copy-line-height blockquote,
+article .nested-copy-line-height td,
+article .nested-copy-line-height th,
+article .nested-copy-line-height dd,
+article .nested-copy-line-height dt,
+article .nested-links {
+  font-family: "Bitter", Georgia, serif;
+}
+
+/* Headings inside prose. Body copy stays at 400; headings are set slightly
+   lighter than 700, which is heavy at display sizes. The `.athelas` class from
+   utilities.css must be beaten, so these carry class specificity. */
+article h1,
+article h1.athelas,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+article h1 a,
+article h2 a,
+article h3 a {
+  font-family: "Bitter", Georgia, serif;
+}
+
+article h1,
+article h1.athelas,
+article h2,
+article h3 {
+  font-weight: 600;
 }
