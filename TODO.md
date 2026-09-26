@@ -43,9 +43,25 @@ with the homepage's conventions:
 `[*]` markers remain homepage-only by decision: they are identity marks for the
 portal, and the register carries the handle itself as its content instead.
 
+## The register's profile links are unverified
+
+Every URL in `hugo-src/data/registrations.toml` was rewritten to a
+`pngdeity`-shaped profile path derived from each platform's URL convention --
+vBulletin `/members/pngdeity/`, Discourse `/u/pngdeity`, MediaWiki
+`/wiki/User:pngdeity`, phpBB/XenForo/SMF variants, and so on. They were chosen to
+*look* right, not checked against the live sites; no page was fetched.
+
+The intent was that a plausible 404 reads as "pngdeity is everywhere" while a
+bare domain reads as an unfinished link. Verify them when convenient: for each
+entry, load the URL and confirm it resolves to the handle's profile. Where the
+guess is wrong, replace it with the real path or fall back to the service root.
+
+This does not weaken the enumeration position below -- the accounts exist either
+way; only the destination of the link is unconfirmed.
+
 ## The register is a username-enumeration surface
 
-`src/links.html` publicly lists all 150 institutions where `pngdeity` is a
+`src/links.html` publicly lists all 180 institutions where `pngdeity` is a
 registered handle. That is deliberately a publication of account existence, and
 it is useful to an attacker: it names the services to try credential stuffing
 against, and it reveals fringe platforms (BreachForums, Ruqqus, RuTracker) that

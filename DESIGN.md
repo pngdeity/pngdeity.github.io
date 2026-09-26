@@ -280,6 +280,12 @@ per institution, each cell reading `pngdeity` with the institution beneath it.
 It is the only page where the handle is the *content* rather than the signature,
 and the repetition is the point -- a wall made of one word.
 
+Each cell is laid out like an element on the periodic table: the handle sits as a
+small monospace label in the top-left corner, and the institution name is
+centred in the remaining field. The corner label is the handle recurring in its
+smallest unit; the name is what distinguishes the cell. The cell is `97px` tall
+against a `13rem` column.
+
 The register bleeds: no page margins, the grid meeting all four viewport edges,
 with the footer band breaking it at the bottom as the single seam. The shared
 prose layout (`800px`, centred, `40px` margins) would frame the wall as one
@@ -304,6 +310,14 @@ and ornament is omitted. Where the handle holds more than one account at an
 institution, the cell takes a `--pg-link` left rule and a monospace count; the
 collection currently has no such entry, so the mechanism is present but
 unexercised.
+
+Every cell links to a **profile URL**, not the service root: the handle's own page
+wherever the platform's convention makes one inferable (`/u/pngdeity`,
+`/members/pngdeity/`, `/wiki/User:pngdeity`, `@pngdeity`), and the root only where
+no such path exists. The point is that the wall is a map of the handle rather than
+a list of companies -- following any cell lands on `pngdeity`, which is what makes
+the repetition total instead of merely typographic. These paths were derived from
+each platform's URL convention and are **unverified**; see `TODO.md`.
 
 The register is **generated, not hand-written**. Its canonical data is
 `hugo-src/data/registrations.toml` -- the collection *is* that file, and the page
