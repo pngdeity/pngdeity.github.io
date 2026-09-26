@@ -1,6 +1,6 @@
 baseURL = 'https://pngdeity.ru/blog/'
 languageCode = 'en-us'
-title = 'The End of the Internet'
+title = 'pngdeity'
 theme = 'ananke'
 
 enableGitInfo = true
