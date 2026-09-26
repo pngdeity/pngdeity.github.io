@@ -31,3 +31,7 @@ url = 'https://en.wikipedia.org/wiki/User:Pngdeity'
 [[secondary]]
 name = 'RSS'
 url = '/blog/index.xml'
+
+[[secondary]]
+name = 'Credits'
+url = '/credits.html'

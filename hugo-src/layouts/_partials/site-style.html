@@ -1,0 +1,27 @@
+{{- /*
+  Build the site stylesheet.
+
+  Concatenates the layout utilities (utilities.css), code block styles
+  (_code.css), and our own design tokens/rules (theme.css) into a single
+  fingerprinted stylesheet at /blog/css/site.<hash>.css.
+
+  See DESIGN.md for the token definitions and the rule that the --pg-* set
+  must stay in sync with the static half in src/style.css.
+*/ -}}
+
+{{- /* Publish the self-hosted reading-register fonts. */ -}}
+{{- range resources.Match "fonts/bitter/*.woff2" -}}
+  {{- $published := .Publish -}}
+{{- end -}}
+
+{{- $utilities := resources.Get "css/utilities.css" -}}
+{{- $code := resources.Get "css/_code.css" -}}
+{{- $theme := resources.Get "css/theme.css" -}}
+
+{{- $css := slice $utilities $code $theme | resources.Concat "css/site.css" -}}
+
+{{- if hugo.IsProduction -}}
+  {{- $css = $css | resources.Minify | resources.Fingerprint -}}
+{{- end -}}
+
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

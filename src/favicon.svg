@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    .tile { fill: #111111; }
+    .ring { stroke: #ff6f5e; }
+    .pupil { fill: #ff6f5e; }
+    .glint { fill: #f4f4f4; }
+    @media (prefers-color-scheme: light) {
+      .tile { fill: #f4f4f4; }
+      .ring { stroke: #9e141d; }
+      .pupil { fill: #9e141d; }
+      .glint { fill: #f4f4f4; }
+    }
+  </style>
+  <rect class="tile" width="64" height="64" rx="12"/>
+  <circle cx="32" cy="32" r="21" fill="none" class="ring" stroke-width="5"/>
+  <circle cx="34" cy="31.5" r="8" class="pupil"/>
+  <circle cx="30.8" cy="28.3" r="2.6" class="glint"/>
+</svg>

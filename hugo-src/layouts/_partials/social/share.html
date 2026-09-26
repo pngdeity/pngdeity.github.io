@@ -1,0 +1,31 @@
+{{- /*
+  Share links for a single page.
+
+  Text-only by design: `params.ananke.social.share.icons = false` in
+  hugo.toml, so no SVG needs to ship. The share text comes from the
+  getShareLink partial, which prefers the page's front-matter description.
+*/ -}}
+
+{{- $share := site.Params.ananke.social.share -}}
+{{- $networks := $share.networks -}}
+{{- $config := site.Params.ananke.social -}}
+
+{{- if and $networks (not $share.disable_share) -}}
+  <div id="sharing" class="mt3 ananke-socials">
+    {{- range $networks -}}
+      {{- $setup := collections.Index $config.networks . -}}
+      {{- if $setup -}}
+        {{- $label := $setup.label -}}
+        {{- if $share.sharetext -}}
+          {{- $label = fmt.Printf "Share on %s" $setup.label -}}
+        {{- end -}}
+        {{- $href := partials.Include "func/social/getShareLink.html" (dict "context" $ "setup" $setup) -}}
+        <a href="{{ $href }}"
+           class="ananke-social-link {{ $setup.slug }} no-underline"
+           title="{{ $label }}"
+           aria-label="{{ $label }}"
+           target="_blank" rel="nofollow noopener noreferrer">{{ $label }}</a>
+      {{- end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

@@ -1,7 +1,6 @@
 baseURL = 'https://pngdeity.ru/blog/'
-languageCode = 'en-us'
-title = 'The End of the Internet'
-theme = 'ananke'
+locale = 'en-us'
+title = 'pngdeity'
 
 enableGitInfo = true
 ignoreLogs = ['warning-goldmark-raw-html']
@@ -15,9 +14,26 @@ tag = 'tags'
 unsafe = true
 
 [params]
-custom_css = ['theme.css']
+show_recent_posts = true
 
 [params.ananke.social.share]
 icons = false
 sharetext = true
 networks = ['reddit', 'x-twitter']
+
+[params.ananke.social.networks.reddit]
+slug = 'reddit'
+label = 'Reddit'
+link = 'https://reddit.com/submit/'
+[params.ananke.social.networks.reddit.particles]
+url = 'permalink'
+title = 'title'
+params = 'resubmit=true'
+
+[params.ananke.social.networks.x-twitter]
+slug = 'x-twitter'
+label = 'X'
+link = 'https://twitter.com/intent/tweet/'
+[params.ananke.social.networks.x-twitter.particles]
+text = 'description'
+url = 'permalink'
