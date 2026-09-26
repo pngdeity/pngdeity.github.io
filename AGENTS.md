@@ -25,10 +25,13 @@ to avoid re-discovering the layout.
 - Blog header nav: `hugo-src/layouts/_partials/site-navigation.html`
 - Blog footer links + copyright: `hugo-src/data/footer.toml`
 - Static pages (hand-maintained, mirror the footer): `src/index.html`,
-  `src/links.html`, `src/404.html`, `src/credits.html`
+  `src/404.html`, `src/credits.html`
+- The register: `src/links.html` (generated wall; see below)
 
 Use root-absolute hrefs (`/...`). Change link lists in `data/footer.toml` and the
-static pages together.
+static pages together. `src/links.html` is not a link list -- it carries the
+generated wall and the shared footer markup, so its nav changes come from
+`footer.toml` like the others but its body does not.
 
 ## Design identity
 
@@ -139,6 +142,13 @@ collection *is* that file. Each `[[registrations]]` entry needs `name`, `url`,
 edit; the markup follows on the next build. The page lists every institution
 where the `pngdeity` handle is registered, so adding an entry publishes the fact
 that the account exists (see `TODO.md`).
+
+Each `url` is a **profile** URL rather than the service root, derived from the
+platform's own convention (`/members/<user>/`, `/u/<user>`,
+`/wiki/User:<user>`, `/@<user>`). They are plausible, not verified -- the
+follow-up to check them is in `TODO.md`. Prefer a convention-shaped profile path
+over a bare domain when adding an entry, and note the platform's convention if
+it is not one already in the file.
 
 ## Workflows
 

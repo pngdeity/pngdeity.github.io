@@ -41,12 +41,16 @@ Use root-absolute links (`/...`) everywhere.
 | 404 page | `src/404.html` |
 
 The static lists mirror `data/footer.toml` by hand; update both when links change.
+`src/links.html` is the exception — it is the register, whose content is the
+generated wall rather than a nav list (see below).
 
 ## The register
 
 `/links.html` lists every institution where the `pngdeity` handle is registered
-— 150 of them — as a full-bleed grid of cells, one per institution. It is the
-one page where the handle is the content rather than the signature.
+— 180 of them — as a full-bleed grid of cells, one per institution. It is the
+one page where the handle is the content rather than the signature. Each cell
+links to the handle's profile on that service rather than to the service root,
+so following any cell lands on `pngdeity`.
 
 The collection's canonical definition is `hugo-src/data/registrations.toml`. The
 page markup is generated from it by `tools/ci/generateregister`, which rewrites
