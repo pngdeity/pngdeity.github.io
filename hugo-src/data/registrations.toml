@@ -938,6 +938,12 @@ accounts = 1
 since = "2023-09-22"
 
 [[registrations]]
+name = "Tinder"
+url = "https://tinder.com/@pngdeity"
+accounts = 1
+since = "2023-03-01"
+
+[[registrations]]
 name = "Tom's Hardware"
 url = "https://forums.tomshardware.com/members/pngdeity/"
 accounts = 1
