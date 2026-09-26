@@ -2,45 +2,31 @@
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Links | pngdeity</title>
+		<title>Register | pngdeity</title>
 		<link rel='stylesheet' type='text/css' href='/style.css'>
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <style>
+      /* The register is the whole page, so it bleeds: the shared prose layout
+         (800px centred, 40px margins) would frame it as one component among
+         others, which is a lie about what this page is. Deliberate override. */
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
         margin: 0;
         max-width: none;
-        padding: 8px;
+        padding: 0;
       }
-      .wrap {
+      #footer {
         display: block;
         text-align: center;
-      }
-      .brand {
-        font-size: 1.5rem;
-        font-weight: 400;
-        letter-spacing: -0.01em;
-        margin: 0 0 1em;
-      }
-      ul.links {
-        display: block;
-        list-style: none;
+        background: var(--pg-bg);
+        border-top: 1px solid var(--pg-border);
+        padding: 1.5rem;
         margin: 0;
-        padding: 0;
-        font-size: 18px;
       }
-      ul.links li {
-        margin: 12px 0;
-      }
-      .copyright {
-        font-size: 14px;
-        margin-top: 2em;
+      #footer p {
+        margin: 0;
       }
     </style>
     <script>
@@ -57,23 +43,1097 @@
     <script src="/theme.js" defer></script>
 	</head>
 
-	<body>
+	<body class="register-page">
 		<a href="#main-content" class="pg-skip-link">Skip to content</a>
 		<button type="button" class="pg-theme-toggle" aria-pressed="false" aria-label="Switch to dark theme" title="Switch theme"><span class="pg-theme-toggle__icon pg-theme-toggle__icon--moon" aria-hidden="true">&#9789;</span><span class="pg-theme-toggle__icon pg-theme-toggle__icon--sun" aria-hidden="true">&#9728;</span></button>
-		<div class="wrap" id="main-content">
-		<h1 class="brand">pngdeity</h1>
-		<ul class="links">
-			<li><a href="/">Home</a></li>
-			<li><a href="/blog/">Blog</a></li>
-			<li><a href="/blog/tags/">Tags</a></li>
-			<li><a href="/pngdeity_files/resume.pdf">Resumé</a></li>
-			<li><a href="/pngdeity_files/vcard.vcf">Contact</a></li>
-			<li><a href="https://github.com/pngdeity">Code</a></li>
-			<li><a href="https://en.wikipedia.org/wiki/User:Pngdeity">Wikipedia</a></li>
-			<li><a href="/blog/index.xml">RSS</a></li>
-			<li><a href="/credits.html">Credits</a></li>
+		<main id="main-content">
+		<!-- BEGIN REGISTER -->
+		<ul class="register">
+			<li class="register__cell">
+				<a class="register__link" href="https://www.1911forum.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">1911forum</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://acoustid.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">AcoustID</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.allaboutcircuits.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">All About Circuits</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.anandtech.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">AnandTech</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://community.ardour.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Ardour</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.att.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">AT&amp;T Community</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://audiokarma.org/forums/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Audiokarma</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.avforums.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">AVForums</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.avsforum.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">AVS Forum</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://bandcamp.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Bandcamp</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.banned.video/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Banned.video</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.bitchute.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">BitChute</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://community.bitwarden.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Bitwarden</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://bsky.app/profile/pngdeity.bsky.social">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Bluesky</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://bookbrainz.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">BookBrainz</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://breached.vc/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">BreachForums</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.camryforums.com/forum/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Camry Forums</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.chess.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Chess.com</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.christianforums.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Christian Forums</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://codeberg.org/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Codeberg</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://cohost.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Cohost</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.couchsurfing.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Couchsurfing</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.coursera.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Coursera</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://csnbbs.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">CSN BBS</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://cults3d.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Cults3D</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://curiouscat.live/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">CuriousCat</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.debian.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Debian</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://deskthority.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Deskthority</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://dev.to/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">DEV Community</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.deviantart.com/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">DeviantArt</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.disboards.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">DISboards</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.discogs.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Discogs</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://discord.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Discord</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://dlive.tv/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">DLive</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://dribbble.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Dribbble</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://everything2.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Everything2</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.facebook.com/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Facebook</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.factorio.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Factorio</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.fark.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Fark</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.fiverr.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Fiverr</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.flickr.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Flickr</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://framacolibri.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Framacolibri</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://gitlab.freedesktop.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">freedesktop.org</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.furaffinity.net/user/pngdeity/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">FurAffinity</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://gab.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Gab</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.garagejournal.com/forum/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Garage Journal</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://geekhack.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Geekhack</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://genius.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Genius</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://gitflic.ru/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">GitFlic</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://github.com/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">GitHub</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://gitlab.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">GitLab</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://gnudb.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">GnuDB</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.goodreads.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Goodreads</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://discuss.grapheneos.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">GrapheneOS</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://greasyfork.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Greasy Fork</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://gumroad.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Gumroad</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://hackaday.io/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Hackaday</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://news.ycombinator.com/user?id=pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Hacker News</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://hackforums.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">HackForums</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.hobby-machinist.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Hobby-Machinist</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://community.home-assistant.io/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Home Assistant</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://bbs.homeshopmachinist.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Home Shop Machinist</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://hvac-talk.com/vbb/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">HVAC-Talk</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.iforgeiron.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">I Forge Iron</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://i2pforum.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">I2P Forum</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.ifixit.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">iFixit</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.imdb.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">IMDb</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.instagram.com/pngdeity/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Instagram</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.instructables.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Instructables</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://community.jitsi.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Jitsi</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://keybase.io/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Keybase</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://community.klipsch.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Klipsch</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://lbry.tv/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LBRY</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.lesswrong.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LessWrong</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://letterboxd.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Letterboxd</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.level1techs.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Level1Techs</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://libgen.li/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Library Genesis</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.librarything.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LibraryThing</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://cloud.lifx.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LIFX</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.linkedin.com/in/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LinkedIn</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://linktr.ee/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Linktree</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.linux.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Linux.org</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://discuss.lfnw.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LinuxFest Northwest</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.livejournal.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LiveJournal</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://locals.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Locals</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://localwiki.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LocalWiki</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.lumberjocks.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LumberJocks</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://lwn.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">LWN</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.manjaro.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Manjaro</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://mastodon.social/@pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Mastodon</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://medium.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Medium</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.meetup.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Meetup</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://mewe.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">MeWe</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.minds.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Minds</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.modular.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Modular</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://addons.mozilla.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Mozilla: Add-ons</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://bugzilla.mozilla.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Mozilla: Bugzilla</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://musicbrainz.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">MusicBrainz</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.mydigitallife.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">My Digital Life</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://myanimelist.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">MyAnimeList</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.myfitnesspal.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">MyFitnessPal</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://myspace.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">MySpace</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.nationstates.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">NationStates</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://learn.networkchuck.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">NetworkChuck</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://nextdoor.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Nextdoor</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.nim-lang.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Nim</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://odysee.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Odysee</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.openhub.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Open Hub</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://opensource.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Open Source Initiative</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://openbenchmarking.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">OpenBenchmarking</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://opencores.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">OpenCores</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://opensource.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Opensource.com</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.openstreetmap.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">OpenStreetMap</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.openwrt.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">OpenWrt</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://orcid.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">ORCID</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://organforum.com/forums/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Organ Forum</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.osdev.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">OSDev</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://owwm.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">OWWM</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://parler.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Parler</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://pastebin.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Pastebin</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.patreon.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Patreon</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://pdfcoffee.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">PDF Coffee</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.pinterest.com/pngdeity/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Pinterest</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://discuss.pixls.us/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">PIXLS.US</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.playstation.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">PlayStation Network</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.plbg.com/forum/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Plumbing Forum</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.practicalmachinist.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Practical Machinist</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://community.preciousplastic.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Precious Plastic</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.quora.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Quora</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.ravelry.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Ravelry</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.reddit.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Reddit</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://app.revolt.chat/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Revolt</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.roblox.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Roblox</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://rosettacode.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Rosetta Code</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://rumble.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Rumble</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://ruqqus.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Ruqqus</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://rutracker.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">RuTracker</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://scrapmetalforum.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Scrap Metal Forum</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.scribd.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Scribd</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.servethehome.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">ServeTheHome</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.snapchat.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Snapchat</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://soundcloud.com/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">SoundCloud</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://sourceforge.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">SourceForge</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://community.spiceworks.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Spiceworks</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.sporcle.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Sporcle</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://stackexchange.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Stack Exchange</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.strava.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Strava</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.styleforum.net/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Styleforum</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://substack.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Substack</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://t.me/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Telegram</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://terrylove.com/forums/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Terry Love</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://thangs.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Thangs</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.thingiverse.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Thingiverse</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.threads.net/@pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Threads</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.tiktok.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">TikTok</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.tomshardware.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Tom's Hardware</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.toolguyd.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">ToolGuyd</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://top500.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">TOP500</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forum.torproject.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Tor Project</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://truthsocial.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Truth Social</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.tumblr.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Tumblr</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.twitch.tv/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Twitch</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://x.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Twitter</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.udemy.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Udemy</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://en.uncyclopedia.co/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Uncyclopedia</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.upwork.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Upwork</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://venmo.com/pngdeity">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Venmo</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://vimeo.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Vimeo</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="http://www.vintagemachinery.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Vintage Machinery</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://vsco.co/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">VSCO</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://weldingweb.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">WeldingWeb</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://en.wikipedia.org/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Wikipedia</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://wikipediasucks.co/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Wikipedia Sucks</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://wikipediocracy.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Wikipediocracy</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.woodworkingtalk.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Woodworking Talk</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://wt.social/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">WT.Social</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://xdaforums.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">XDA Forums</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.yeggi.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Yeggi</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://forums.yesterdaystractors.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">Yesterday's Tractors</span>
+				</a>
+			</li>
+			<li class="register__cell">
+				<a class="register__link" href="https://www.youtube.com/">
+					<span class="register__handle">pngdeity</span>
+					<span class="register__institution">YouTube</span>
+				</a>
+			</li>
 		</ul>
-		<p class="copyright">&copy; Nathan Somers 2026</p>
+		<!-- END REGISTER -->
+		</main>
+		<div id="footer">
+			<p><a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/credits.html">Credits</a></p>
 		</div>
         </body>
 </html>

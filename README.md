@@ -5,7 +5,8 @@ Source for my personal website, published at https://pngdeity.ru/.
 The published site is assembled from two sources:
 
 - **`src/`** — the static root, uploaded to GitHub Pages verbatim. `index.html`
-  (`/`), `links.html` (`/links.html`), `404.html` (served for the whole domain),
+  (`/`), `links.html` (`/links.html`, the register), `credits.html`
+  (`/credits.html`, the colophon), `404.html` (served for the whole domain),
   `style.css`, plus `pngdeity_files/` (résumé, vCard, images) and `downloads/`
   (files linked from posts).
 - **`hugo-src/`** — the Hugo blog. It builds with
@@ -17,8 +18,8 @@ The published site is assembled from two sources:
   `themes/` directory; the templates in `hugo-src/layouts/` and the styles in
   `hugo-src/assets/css/` are the site's own theme.
 - **`tools/ci/`** — Go helpers used by CI (`generatemetadata`,
-  `validatemetadata`, `sitecheck`, `healthcheck`, `manageincident`,
-  `resolverrollback`).
+  `validatemetadata`, `generateregister`, `sitecheck`, `healthcheck`,
+  `manageincident`, `resolverrollback`).
 
 There is no Node toolchain: the project has no `.scss`/`.sass` sources and no
 Hugo Sass/PostCSS pipeline, so Node and the `sass` dependency were removed along
@@ -35,10 +36,30 @@ Use root-absolute links (`/...`) everywhere.
 | Blog header nav | `hugo-src/layouts/_partials/site-navigation.html` |
 | Blog footer links + copyright | `hugo-src/data/footer.toml` |
 | Home page | `src/index.html` |
-| Link hub | `src/links.html` |
+| The register | `src/links.html` + `hugo-src/data/registrations.toml` |
+| Colophon | `src/credits.html` |
 | 404 page | `src/404.html` |
 
 The static lists mirror `data/footer.toml` by hand; update both when links change.
+
+## The register
+
+`/links.html` lists every institution where the `pngdeity` handle is registered
+— 150 of them — as a full-bleed grid of cells, one per institution. It is the
+one page where the handle is the content rather than the signature.
+
+The collection's canonical definition is `hugo-src/data/registrations.toml`. The
+page markup is generated from it by `tools/ci/generateregister`, which rewrites
+only the region between `<!-- BEGIN REGISTER -->` and `<!-- END REGISTER -->` in
+`src/links.html`:
+
+```sh
+cd tools/ci && go run ./generateregister -repo ../..
+```
+
+The deploy workflow runs this automatically, so data changes need no manual
+regeneration. Adding an entry publishes the fact that the account exists; see
+`TODO.md` for the reasoning behind that trade-off.
 
 ## Design and identity
 
@@ -187,6 +208,7 @@ The GitHub Pages deploy workflow (`.github/workflows/build-deploy.yaml`) generat
 
 - `tools/ci/generatemetadata`
 - `tools/ci/validatemetadata`
+- `tools/ci/generateregister` (rebuilds the register wall in `src/links.html`)
 
 These Go applications create/validate `robots.txt`, `sitemap.xml`, `llms.txt`,
 `llms-full.txt`, and the `.well-known/` files (`ai-catalog.json`, `keybase.txt`)

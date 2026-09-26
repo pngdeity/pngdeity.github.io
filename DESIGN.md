@@ -274,9 +274,47 @@ a negative `text-indent` so the markers form a clean column of their own with
 the link labels aligned to a second column. It reads as display type: an index,
 not prose.
 
+**The register.** The `/links.html` page is the register: every institution the
+handle `pngdeity` is registered at, as a full-bleed uniform grid of cells, one
+per institution, each cell reading `pngdeity` with the institution beneath it.
+It is the only page where the handle is the *content* rather than the signature,
+and the repetition is the point -- a wall made of one word.
+
+The register bleeds: no page margins, the grid meeting all four viewport edges,
+with the footer band breaking it at the bottom as the single seam. The shared
+prose layout (`800px`, centred, `40px` margins) would frame the wall as one
+component among several, which is a lie about what the page is, so `links.html`
+carries a deliberate, commented override rather than inheriting it. The grid
+ends where the collection ends, so the final row may be ragged; padding it would
+mean inventing entries.
+
+Every cell is a link, and the whole cell is the target -- the wall carries no
+inline link styling. Cells are filled by `--pg-surface` on hover, and every cell
+carries a `1px` `--pg-border` hairline. Under the cursor the cell's own text
+resolves: the handle moves from `--pg-fg-muted` to `--pg-link` and the
+institution name to the full foreground, so the wall reads itself where the
+pointer is. This is a state, not an animation -- it is the same category as the
+hover fill, and it is why the register has no scroll-triggered motion: movement
+the user *causes* is interaction, whereas movement the page performs is ornament,
+and ornament is omitted. Where the handle holds more than one account at an
+institution, the cell takes a `--pg-link` left rule and a monospace count; the
+collection currently has no such entry, so the mechanism is present but
+unexercised.
+
+The register is **generated, not hand-written**. Its canonical data is
+`hugo-src/data/registrations.toml` -- the collection *is* that file, and the page
+is a rendering of it. `tools/ci/generateregister` reads the file and writes the
+wall between `<!-- BEGIN REGISTER -->` and `<!-- END REGISTER -->` in
+`src/links.html`, leaving all markup outside those markers untouched, because the
+static half has no server-side includes. The deploy workflow runs it after the
+Hugo build is staged.
+
 **The theme toggle.** A button showing the theme it will switch to, kept in sync
 by `theme.js` through `aria-pressed` and `aria-label` ("Switch to dark theme" /
-"Switch to light theme"). It is the only interactive chrome on the site.
+"Switch to light theme"). It is the only interactive chrome on the site. On the
+register it floats over the bleeding grid, so it inverts -- `--pg-fg` fill,
+`--pg-bg` glyph -- to separate from whatever cell is behind it. That inversion is
+scoped to `.register-page` and applies nowhere else.
 
 **The post card.** The blog's list and term pages render each post as a card: a
 surface background, the section label, the title, the summary, and a "read more"

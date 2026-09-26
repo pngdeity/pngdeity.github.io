@@ -32,20 +32,35 @@ Priority unknown. Until it exists, the sync rule is a convention only.
 
 ## Static-page drift after the homepage recomposition
 
-The static pages do not match the homepage's conventions:
+Resolved for `src/credits.html` and `src/links.html`, which were both reworked
+with the homepage's conventions:
 
-- `src/links.html` still centres its list and carries no `[*]` markers.
-- `src/credits.html` uses a `.brand` rule of `1.5em` / `normal`, while
-  `src/links.html` uses `1.5rem` / `400` / `-0.01em`.
+- `src/links.html` is now the register -- a full-bleed generated grid (see
+  `DESIGN.md`), so it no longer centres a list.
+- `src/credits.html` is a colophon whose `.brand` comes from the shared
+  stylesheet, so the `1.5em` / `normal` override is gone.
 
-The `font-family: sans-serif` overrides in both pages have been removed; the
-typeface is now declared once in `src/style.css` and inherited everywhere.
+`[*]` markers remain homepage-only by decision: they are identity marks for the
+portal, and the register carries the handle itself as its content instead.
 
-The reading register is settled: blog prose is Bitter (see `DESIGN.md`). What
-remains open here is only the static-page drift above.
+## The register is a username-enumeration surface
 
-`DESIGN.md` describes the settled system; these pages should be brought into
-line with it, or the description should be narrowed.
+`src/links.html` publicly lists all 150 institutions where `pngdeity` is a
+registered handle. That is deliberately a publication of account existence, and
+it is useful to an attacker: it names the services to try credential stuffing
+against, and it reveals fringe platforms (BreachForums, Ruqqus, RuTracker) that
+a visitor could not otherwise associate with the name.
+
+This was accepted knowingly rather than overlooked. The full vault holds ~1,130
+items; only institutions survive curation -- no ATS or job-application portals,
+no finance, commerce, or anything whose presence is a fact about the person
+rather than the handle. The residual exposure is the handle's existence, not any
+credential, and the mitigation is that the handle is one of the easiest facts
+about a person to find anyway.
+
+If that judgement is revisited, the lever is `hugo-src/data/registrations.toml`:
+removing an entry removes the cell. Do not "fix" it by hiding the page from
+search engines -- it is a public page.
 
 ## Image assets that are deliberately kept
 
@@ -56,12 +71,17 @@ deletion or optimization.
 `gladstone.jpg` and `gladstone_modified.jpg` were removed in `e6f77a0`, and
 `favicon-16.png` with them (`favicon.ico` already embeds a 16x16 frame).
 
+## YouTube's registration date is a placeholder
+
+The YouTube entry in `hugo-src/data/registrations.toml` carries a `since` of
+`2024-05-20` that was entered to fill the field. YouTube is absent from the
+Bitwarden vault, so the date was never derived from a source. Correct it from
+the account page or drop the field.
+
 ## `content/develop-drafts` has diverged from `main`
 
-Not merely behind: the branch carries 13 content commits of its own (the Open
-Source on Offense draft, Wikipedia editing, and revisions to `beets-config`,
-`stealing-github-commits`, and `pressing-work`) while missing everything `main`
-gained. It is a two-way merge, not a fast-forward resync.
-
-All posts on the branch are `draft = true`, so merging it cannot publish
-anything. Last synced with `main` at `b500c59`.
+Last synced with `main` at `787c96f`, which merged `main` into the branch (not
+the reverse). The branch carries content commits of its own -- the Open Source
+on Offense draft, Wikipedia editing, and revisions to `beets-config`,
+`stealing-github-commits`, and `pressing-work`. All its posts are `draft = true`,
+so merging it cannot publish anything.
