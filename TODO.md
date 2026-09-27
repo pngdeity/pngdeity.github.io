@@ -87,6 +87,15 @@ deletion or optimization.
 `gladstone.jpg` and `gladstone_modified.jpg` were removed in `e6f77a0`, and
 `favicon-16.png` with them (`favicon.ico` already embeds a 16x16 frame).
 
+## The homepage image carries AI-generation artifacts
+
+The homepage photograph (`src/pngdeity_files/gladstone-at-work.jpg`) has visible
+artifacts from its generation: the laptop screen content was replaced and the
+surrounding scene re-rendered, and the seams show. `src/credits.html` already
+discloses that the image is found and altered, but the disclosure does not make
+the artifacts acceptable. Clean them up, or replace the frame with a better
+composite.
+
 ## YouTube's registration date is a placeholder
 
 The YouTube entry in `hugo-src/data/registrations.toml` carries a `since` of
