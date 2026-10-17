@@ -103,6 +103,47 @@ The YouTube entry in `hugo-src/data/registrations.toml` carries a `since` of
 Bitwarden vault, so the date was never derived from a source. Correct it from
 the account page or drop the field.
 
+## A "100% human-written" badge for blog posts
+
+Raised as a parallel to the AI-artifacts entry above, from the other direction:
+a mark that asserts the writing itself is not machine-generated -- a "100%
+organic" sticker for prose.
+
+Two things need settling before any markup.
+
+The claim. "Human-written" is unverifiable by inspection: there is no instrument
+that reads a page and returns its authorship. A badge that offers verification
+has to substitute a *proxy* for it -- signed commits and a public history, a
+revised draft trail, a published process note -- and be honest that the proxy
+does not prove the claim, only makes it costly to fake. Otherwise the badge is
+exactly the theatre `DESIGN.md`'s no-gimmicks rule exists to prevent.
+
+The form. A sticker is decoration, and the identity forbids ornament that
+carries no information. A badge in the site's voice would have to sit in the
+metadata register (near the timestamp, in the chrome), state the claim once, and
+link to the reasoning rather than wear a seal. The "organic" register is the
+part most likely to read as a joke the site did not intend.
+
+Evaluate both before committing to the idea; the honest version may be a line of
+prose in the footer that no badge would beat.
+
+## `credits.html` shows a dead scrollbar on desktop
+
+Reported from use: at desktop widths the credits page renders a vertical
+scrollbar that can be dragged, but there is nothing to scroll to -- the document
+is shorter than the viewport. A scrollable-looking page that cannot scroll reads
+as broken, and the drag itself does nothing.
+
+Not yet diagnosed. The usual causes are a stray `min-height: 100vh` plus padding
+or a border pushing the box past the viewport, a fixed or absolutely positioned
+element extending below the fold, `overflow-y: scroll` forced anywhere, or a
+margin that collapses outside its container. Find which it is on `credits.html`
+specifically -- it may not affect the other static pages, and if it does the
+cause is shared in `src/style.css` rather than local to the page.
+
+Resolve it rather than hide it: fix the geometry so the document is genuinely
+shorter than the viewport, and do not paper over it with `overflow: hidden`.
+
 ## `content/develop-drafts` must be re-synced as `main` advances
 
 The branch accumulates WIP posts and is merged with `main` periodically so the
